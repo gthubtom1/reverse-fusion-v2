@@ -1,16 +1,17 @@
-current_stage: 5
-current_domain: js-1
+current_stage: 6
+current_domain: apk-1
 status: 进行中
 done:
-  - "Stage 5A 完成：reverse-skill 完整版已恢复（core 复刻锁定提交 ce67509…，675 个文件，与上游 676 只差 .git；field-journal/precedent-reverse.md 存在，18 个技能引用未断；REA 子模块无抢路由技能）"
-  - "MANIFEST 已更新：fusion_version v3，stage_5a 完成，reverse-skill 完整版已恢复"
-next_step: "Stage 5：JS/网页算法——登记 1 简单 + 1 中等测试页，按 js-reverse 流程做 5 用例对照"
+  - "Stage 5A 完成：reverse-skill 完整版已恢复"
+  - "Stage 5 完成：JS 算法抽取通过（sig1+sig2 各 5 用例双侧对照全过；比较器自检通过；Node 独立复现）"
+next_step: "Stage 6：APK——先装并核实 jadx/apktool/adb/frida 工具链；找 1 简单 + 1 中等公开学习 APK，登记来源和 SHA-256；按 js 流程做 5 用例对照"
 blocked:
   - "无"
 open_items:
-  - "jshookmcp 注册方式未核实（以后再说，先用 Node 本地复现 + REA 静态分析备用梯）"
+  - "jshookmcp 注册方式未核实（以后再说）"
+  - "jadx/apktool/adb/frida 是否已装未核实——Stage 6 第一步核实"
   - "core 675 vs v3 说的 671、上游 676，数字差异原因未核实"
-last_commit: "<Stage 5A 提交后填写>"
-last_commit_link: "<Stage 5A 提交后填写>"
+last_commit: "e4ec16baea4a8f19be9abcbf5f05963f9135e802"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/e4ec16baea4a8f19be9abcbf5f05963f9135e802"
 evidence:
-  - "github.com/gthubtom1/reverse-fusion-v2/commit/…（Stage 5A）"
+  - "cases/js-1/ACCEPTANCE.md（Stage 5）"

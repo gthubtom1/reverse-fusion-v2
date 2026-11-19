@@ -1,0 +1,95 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "fam": "sig1",
+      "input": "alice",
+      "expect": "14801cb2d5",
+      "got": "14801cb2d5",
+      "pass": true
+    },
+    {
+      "fam": "sig1",
+      "input": "",
+      "expect": "f8881564",
+      "got": "f8881564",
+      "pass": true
+    },
+    {
+      "fam": "sig1",
+      "input": "abc",
+      "expect": "14b41064",
+      "got": "14b41064",
+      "pass": true
+    },
+    {
+      "fam": "sig1",
+      "input": "hello world",
+      "expect": "06be0641c1e0b1038331a7",
+      "got": "06be0641c1e0b1038331a7",
+      "pass": true
+    },
+    {
+      "fam": "sig1",
+      "input": "k3y!_x",
+      "expect": "0012fd2e2051",
+      "got": "0012fd2e2051",
+      "pass": true
+    },
+    {
+      "fam": "sig2",
+      "msg": "hello",
+      "nonce": 42,
+      "expect": "8698c417",
+      "got": "8698c417",
+      "pass": true
+    },
+    {
+      "fam": "sig2",
+      "msg": "",
+      "nonce": 0,
+      "expect": "811c9dc5",
+      "got": "811c9dc5",
+      "pass": true
+    },
+    {
+      "fam": "sig2",
+      "msg": "x",
+      "nonce": 7,
+      "expect": "783f0662",
+      "got": "783f0662",
+      "pass": true
+    },
+    {
+      "fam": "sig2",
+      "msg": "hello",
+      "nonce": 43,
+      "expect": "55fdcd57",
+      "got": "55fdcd57",
+      "pass": true
+    },
+    {
+      "fam": "sig2",
+      "msg": "hello world",
+      "nonce": 0,
+      "expect": "ac6e90b2",
+      "got": "ac6e90b2",
+      "pass": true
+    },
+    {
+      "fam": "sig1",
+      "input": "fresh value 9!",
+      "got": "1a941453dfe0b3679f0fa598cd9e",
+      "pass": true,
+      "note": "unseen-input probe"
+    },
+    {
+      "fam": "sig2",
+      "msg": "fresh",
+      "nonce": 1234,
+      "got": "e205b777",
+      "pass": true,
+      "note": "unseen-input probe"
+    }
+  ]
+}

@@ -75,6 +75,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: reverse-skill 完整版已恢复（core 复刻锁定提交，675 个文件，与上游只差 .git）；field-journal/precedent-reverse.md 存在，18 个技能引用未断；REA 子模块无抢路由技能
+  stage_5:
+    status: 完成
+    date: 2026-11-20
+    what: JS/网页算法（模式 3 算法抽取）通过——两个自托管测试页 sig1（简单）+sig2（中等）各 5 用例双侧对照全过、独立运行、比较器自检（防背答案）通过；js-reverse_*/jshookmcp 未装，用 Node 本地复现 + chrome-devtools 备用梯
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
