@@ -53,7 +53,7 @@ python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-no
 - 已做：v2.1 勘误；第 1–3 阶段（安装、接线、接线测试、样本 1 L4、样本 2 本轮口径）。
 - 未做：样本 3；第 4 阶段的「定版」与 lifecycle 的完整性走查（本轮补齐了 lifecycle 5 件套，定版号仍为 v2.1）。
 
-## v3 各领域怎么跑（Stage 11 汇总入口）
+## v3 各领域怎么跑（Stage 11 汇总入口 + V3.1 R5 追加）
 
 前置：Node `D:/Tools/node-24.22.1/node-v24.22.1-win-x64/node.exe`（或把 node 加入 PATH 后直接 `node`）。所有样本均为自建学习目标（第三方样本下载网络不稳，如实记录）。
 
@@ -65,6 +65,8 @@ python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-no
 | 协议 | `cd cases/protocol-1 && node reimpl/decode.mjs`（decode 对照）；抓包：tshark loopback | `cases/protocol-1/` | `cases/protocol-1/ACCEPTANCE.md` |
 | 浏览器自动化（观察） | chrome-devtools 打开 `cases/js-1/target/index.html`（本地 8765 服务）→ 点击 → 录请求 | `cases/automation-1/` | `cases/automation-1/ACCEPTANCE.md` |
 | 验证码 | `node cases/captcha-1/reimpl/captcharepro.mjs`（token）+ `node cases/captcha-1/reimpl/comparator_check.mjs` | `cases/captcha-1/` | `cases/captcha-1/ACCEPTANCE.md` |
+| Windows+.NET+厚客户端（V3.1 R5） | `python -I cases/netwin-1/reimpl/licensecheck.py`（+ 原版 `target/build/out/build.exe`） | `cases/netwin-1/` | `cases/netwin-1/ACCEPTANCE.md` |
+| Go/Rust（V3.1 R5） | `cd cases/gorust-1 && go run reimpl/check.go` | `cases/gorust-1/` | `cases/gorust-1/ACCEPTANCE.md` |
 
 「一个没看过方案的人照着跑」：每个领域先读其 `ACCEPTANCE.md`，再看 `reimpl/` 里的复现脚本，命令见上表；期望输出在验收文件里写明。
 
