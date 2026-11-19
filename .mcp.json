@@ -7,7 +7,9 @@
         "mcp"
       ],
       "env": {
-        "HUSKY": "0"
+        "HUSKY": "0",
+        "GHIDRA_INSTALL_DIR": "D:\\Tools\\Ghidra-12.2\\ghidra_12.2_PUBLIC",
+        "JAVA_HOME": "D:\\Tools\\jdk25"
       }
     }
   }
