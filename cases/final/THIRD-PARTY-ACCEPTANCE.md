@@ -11,3 +11,21 @@
 | 5. STATE 检查点 | 目标提交跑 `python -I lifecycle/check_state.py`。在可丢弃检出额外造一个空提交后重跑 | 目标提交退出 0 并打印其哈希。无状态更新的子提交退出 1。 |
 
 领域设备实测、客户端配置和第二台机器装机单独记账。五组检查无法替代真实 Codex 往返、独立装机或全领域行为回归，不签发 `PI-PASS.md`。开放事项见 [结论](THIRD-PARTY-REPORT.md)。
+
+## 第 1 轮 Pi 输出
+
+被测版本 `18f260073f709c76fe700084ea18c29152bdbe54`。使用全新 `pi -p` 会话，关闭已有会话、扩展、技能和项目上下文，执行外置检查脚本。Pi 返回以下结果。其工具没有单独返回数值退出码。作者运行同一脚本的退出码为 0。
+
+```text
+1: OK one route table under core/, 45 skill pointers checked
+2: lf sample-1: PASS 11
+2: lf sample-2: PASS 15
+2: crlf sample-1: PASS 11
+2: crlf sample-2: PASS 15
+3: tamper rejected
+4: five comparator outcomes matched
+5: OK STATE checkpoint 18f260073f709c76fe700084ea18c29152bdbe54
+5: stale state rejected
+```
+
+负用例拒绝了一个一次性的子提交，这条预期失败不影响正向检查。两次测试均复用真实清单和原检查器。未执行任何原始样本。

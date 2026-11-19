@@ -1,9 +1,10 @@
-current_stage: 第三方复核后修订，独立验收待完成
+current_stage: 第三方复核后修订，Pi 基础检查已取得输出
 current_domain: handoff-and-deployment
 status: 已修订交接基础设施；全领域与新机器验收未签发
-next_step: 按 cases/final/THIRD-PARTY-ACCEPTANCE.md 在 Pi 全新会话独立核对，按报告更新开放事项。
+next_step: 按 cases/final/THIRD-PARTY-REPORT.md 继续核对第二台机器的部署和宿主接线。
 audit_baseline: cd99b9c424138e30c6840f57553bfb37cd001830
-pi_test: pending
+pi_test: mechanical_checks_replayed
+pi_tested_commit: 18f260073f709c76fe700084ea18c29152bdbe54
 open_items:
   - "真实 Codex 往返与生产端到端证据未取得"
   - "第二台计算机完整部署、宿主接线及缺失样本未验证"
