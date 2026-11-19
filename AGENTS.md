@@ -1,5 +1,7 @@
 # reverse-fusion-v2（指针文件）
 本项目位置：`<SHARED_FOLDER>`（同步脚本从 `%USERPROFILE%/.fusion/fusion-home.yaml` 的 `shared_folder` 填入）。第一步读 `<SHARED_FOLDER>/FUSION-FINAL-v3.2.md` 与 `<SHARED_FOLDER>/lifecycle/STATE.yaml`；总控 `<SHARED_FOLDER>/core/skills/SKILL.md`；配置文件 `%USERPROFILE%/.fusion/fusion-home.yaml`。
+当前接手顺序：先读 `DEPLOYMENT-INVENTORY.md` 与 `lifecycle/STATE.yaml`，再读 `cases/final/THIRD-PARTY-REPORT.md`。历史冻结计划里的状态和缺失旧审计不作为当前验收。
+
 下面 5 条同步约定全文保留：
 # 本项目交接约定
 

@@ -41,3 +41,7 @@ TC1、TC2 的序列号由 `reimpl/keygen.py` 生成，生成后交给原版真�
 - H（0x401d80）没有用高级语言重写；当前用 Unicorn 模拟原版机器码生成表（`reimpl/emulate_hash.py`），与运行时 dump 逐字节一致（E-006）。这是机器码级复现，不是从反编译 C 重新实现的源码。
 - 没有动态调试内存以外的运行状态；没有测 locale、TTY、超长行截断等其他环境差异。
 - 校验只验证 6 个三元组位置；R46 的 L5 副作用面（提示文字、退出行为）没有由 keygen 复刻。
+
+## 机械交接与证据来源
+
+Windows 平台拒绝 ELF 分析，本案无 REA `ev_`。机器清单 `bundle_refs` 中的 E-002 是 [请求回执](evidence/E-002-overview.json)，保存了平台诊断。 使用 [机器清单](notes/handoff-manifest.json)核对文件与引用。真实 Codex 往返未取得回执。

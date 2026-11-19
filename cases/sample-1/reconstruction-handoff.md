@@ -43,3 +43,7 @@ auth.status: granted
 - 未复刻控制台颜色、标题、等待回车等外围副作用；独立实现只复刻“接受/拒绝”判断。
 - 只测了空白分词的空格、CR 和长输入；Tab、全角空格等未测。
 - 原版依赖调试版 CRT（`ucrtbased.dll`、`msvcp140d.dll` 等）；本机是从 Windows SDK 与 VS Build Tools 的调试运行库目录取得，未记录这些运行库的哈希。
+
+## 机械交接与证据来源
+
+`E-005` 的完整 REA 证据号为 `ev_cdf672b5dd0d2716c7857ad5def2f11104109341458c8f504f9824a459389a0d`，来自 [E-005 原始答复](evidence/E-005-check.json)。更多对应关系见 [证据映射](EVIDENCE-MAP.md)。 使用 [机器清单](notes/handoff-manifest.json)核对文件与引用。真实 Codex 往返未取得回执。

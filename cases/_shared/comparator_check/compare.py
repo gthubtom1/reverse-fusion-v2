@@ -14,15 +14,13 @@ def check(candidates, normal, tampered, label="domain"):
     for c in candidates:
         n = normal(c)
         t = tampered(c)
-        if n is True:
-            ok = t is False  # accepted must flip
-            note = "accepted->must flip"
-        else:
-            ok = t is False  # rejected stays rejected
-            note = "rejected stays"
+        if type(n) is not bool or type(t) is not bool:
+            raise TypeError('normal and tampered must return booleans')
+        ok = t is False
+        note = 'accepted->must flip' if n else 'rejected stays'
         rows.append({"input": c if isinstance(c, str) else repr(c),
                      "normal": n, "tampered": t, "ok": ok, "note": note})
-    result = {"label": label, "ok": all(r["ok"] for r in rows), "rows": rows}
+    result = {"label": label, "ok": any(r["normal"] for r in rows) and all(r["ok"] for r in rows), "rows": rows}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return result
 

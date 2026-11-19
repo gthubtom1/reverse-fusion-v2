@@ -1,0 +1,25 @@
+# Existing handoff manifests verify exact checkout bytes. Preserve the original
+# commitments across core.autocrlf settings, including historical CRLF files.
+cases/sample-1/evidence/E-005-check.json text eol=crlf
+cases/sample-1/evidence/E-005.md text eol=crlf
+cases/sample-1/evidence/E-REA-COMPLETE.json text eol=lf
+cases/sample-1/notes/obligations.json text eol=lf
+cases/sample-1/notes/unknowns.json text eol=lf
+cases/sample-1/scope.md text eol=lf
+cases/sample-1/timeline.md text eol=lf
+cases/sample-1/workitems.md text eol=lf
+specs/001-xor-v1/*.md text eol=lf
+
+cases/sample-2/evidence/E-002-overview.json text eol=crlf
+cases/sample-2/evidence/E-004-gdb-dump.txt text eol=lf
+cases/sample-2/evidence/E-004a.md text eol=crlf
+cases/sample-2/evidence/E-005-five-cases.json text eol=crlf
+cases/sample-2/evidence/E-005.md text eol=crlf
+cases/sample-2/evidence/E-006-table-verify-alice.txt text eol=crlf
+cases/sample-2/evidence/E-006a.md text eol=crlf
+cases/sample-2/notes/obligations.json text eol=lf
+cases/sample-2/notes/unknowns.json text eol=lf
+cases/sample-2/scope.md text eol=lf
+cases/sample-2/timeline.md text eol=lf
+cases/sample-2/workitems.md text eol=crlf
+specs/001-keygen-v1/*.md text eol=crlf

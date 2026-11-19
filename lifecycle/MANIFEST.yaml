@@ -2,6 +2,12 @@ fusion_version: v3.2
 fusion_date: 2026-11-20
 goal: 白话 in Codex -> 分析软件 -> 重做功能一样的版本（扩展到全领域）
 
+independent_audit:
+  baseline: cd99b9c424138e30c6840f57553bfb37cd001830
+  report: cases/final/THIRD-PARTY-REPORT.md
+  domain_inventory: cases/final/THIRD-PARTY-DOMAINS.md
+  independent_acceptance: pending
+
 pinned:
   rea:
     repo: morluto/rea
@@ -39,7 +45,7 @@ install:
     installed: true
     modules_kept: 675
     restored_complete: true
-    restored_final_count: 675  # 恢复清单数按 v3.2 §2 diff 算法，469/467 作废；命令输出受 UTF-8 文件名干扰，写“未核实”
+    restored_final_count: 675  # e4ec16b：路径新增 541，移除 74，净增 467
     upstream_count: 675
     locations: [.claude/skills, .agents/skills, .pi/skills]
     skill_install_counts: {".claude/skills": 702, ".agents/skills": 702, ".pi/skills": 702, "checked_at": "2026-11-20"}
@@ -147,5 +153,5 @@ known_limitations:
   - rea doctor 总体 healthy=false（hopper/ida/jadx/kuna 可选引擎未装）
   - 两个样本都没有声明 L5
   - 样本 2 的哈希用 Unicorn 模拟原版机器码，不是高级语言独立重写
-  - v2.1 的“45 个技能”数不对（实测 44 个顶层技能目录，原因未核实）；恢复后 core 675 文件、上游 676 文件（差 .git），与 v3 的 671/463 标注有出入，原因未核实（可能统计口径不同）
+  - v2.1 的“45 个技能”数不对（实测 44 个顶层技能目录，原因未核实）；锁定上游与审计基线 core 追踪路径均为 675（不含 .git），路径集合一致，5 个内容 blob 不同
   - js-reverse_* MCP 工具、jshookmcp、jadx、apktool、frida、adb 是否已装未见核（v3 §13.3）

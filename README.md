@@ -1,6 +1,8 @@
 # 怎么跑第一个小目标（README 实操页）
 
-> **v3.2：路径不写死。** 下面所有 `<...>` 占位符的实际值都在唯一配置文件 `%USERPROFILE%/.fusion/fusion-home.yaml`（`shared_folder` / `node_exe` / `ghidra_install_dir` / `java_home`）。换盘只改这一行，再跑 `tools/fusion-sync.sh`（同步脚本会重写 `.mcp.json`、根 CLAUDE.md、全局技能指针）。
+> v3.2 的共享目录配置记录在 `~/.fusion/fusion-home.yaml`。历史同步脚本会改写项目和宿主文件，当前部署状态以部署核对清单为准。
+
+当前接手从 [部署核对清单](DEPLOYMENT-INVENTORY.md)、[状态](lifecycle/STATE.yaml) 和 [第三方结论](cases/final/THIRD-PARTY-REPORT.md) 开始。下文为历史实操记录，部署工具和各宿主结果仍需按核对清单分开验证。
 
 ## 前置
 

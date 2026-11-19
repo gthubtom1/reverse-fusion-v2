@@ -13,8 +13,10 @@
 | MCP 工具 | `search_procedures` | 按名字查找函数 | 是 | 是（样本 1 main 检索） |
 | MCP 工具 | `analyze_function` | 反编译/分析单个函数 → 证据 | 是 | 是（样本 1 的 main、校验函数） |
 | MCP 工具 | `get_evidence_bundle` | 读保留的证据记录与完整证据包 | 是 | 是（summary/complete 均成功） |
-| MCP 工具 | `export_evidence_bundle` | 把会话确定性 Evidence 写到本地路径 | 是 | 本机未调用（用 `get_evidence_bundle` 落盘） |
-| MCP 工具 | `compare_functions` / `compare_artifacts` | 跨版本/产物比对 | 是 | 本机未调用 |
+| MCP 工具 | `export_evidence_bundle` | 把会话确定性 Evidence 写到本地路径 | 是 | 历史成功一次（样本 1 E-010，2 条记录） |
+| MCP 工具 | `compare_functions` | 函数比对 | 是 | 历史成功一次（样本 1 E-012）；E-011 不计成功 |
+| `compare_artifacts` | 产物比对 | 是 | 未见调用回执 |
+| `verify_reconstruction` | 重建验证 | 是 | 样本 1 E-013 返回 `invalid_request` |
 | MCP 工具 | `compare_managed_members` | 比托管成员 | 是 | 本机未调用 |
 | `scripts/rea.mjs` | `--version` | 版本核验 | 是 | 是（返回 6.9.0） |
 | `scripts/rea.mjs` | `doctor` | 环境体检 | 是 | 是（`cases/stage2/rea-doctor-after.txt`；总体 healthy=false） |
@@ -23,9 +25,9 @@
 
 | 文件 | 函数名 / 模块 | 用来干什么 | 固定版本文档已核 | 本机运行已核 |
 |---|---|---|---|---|
-| `skills/SKILL.md` | 总控 router | 路由、建案子、证据账 | 是 | 是（`core/SKILL.md` 为准分发） |
+| `skills/SKILL.md` | 总控 router | 路由、建案子、证据账 | 是 | 是（`core/skills/SKILL.md` 为准分发） |
 | `skills/reconstruction/SKILL.md` | R46 | L0–L6、L4/L5 验收 | 是 | 未整体运行；本机按 R46 口径做了用例对照 |
-| `skills/reconstruction/scripts/check_handoff.py` | 机械检查 | 机器核对交接单 | 是 | 是（自带示例跑过，结果 FAIL 因示例引用文件缺失） |
+| `skills/reconstruction/scripts/check_handoff.py` | 机械检查 | 机器核对交接单 | 是 | 样本 1/2 均有机械检查回执，见第三方审计 §2 |
 | `skills/reconstruction/examples/synthetic-project` | 示例案子 | 参考格式 | 是 | 是（check_handoff 用其运行） |
 | `skills/js-reverse` | Rebuild / js-reverse 方法流 | JS 签名本地复现 | 是 | 是（Stage 5：Node 本地复现 + chrome-devtools 观察浏览器，未用 js-reverse_* MCP） |
 | reverse-skill `skills/apk-reverse`, `mobile-reverse` | jadx / apktool 方法流 | APK 解包、找关键算法 | 是 | 是（Stage 6：jadx 1.5.6 反编译 + Node 复现；apktool 未实际执行解包） |
@@ -48,5 +50,5 @@
 
 ## 备注
 
-- REA 的四个「导出/比对」类工具在 v2.1 里是「固定版本文档已核」；本机 `tools/list` 已确认名字存在，但本轮没有实际调用，故上表写「本机未调用」。
+- REA 的四个「导出/比对」类工具在 v2.1 里是「固定版本文档已核」；本机 `tools/list` 已确认名字存在，运行结果以对应样本 E-010 至 E-013 原始回执为准。
 - 未把「查到名字」写成「安装成功/调用成功」。

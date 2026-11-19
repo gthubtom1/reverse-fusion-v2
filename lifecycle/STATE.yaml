@@ -1,21 +1,17 @@
-current_stage: R8（Pi 待测）
-current_domain: defenses
-status: 完成（v3.1 定稿；G1/G2 部分达标见 GAPS，不宣称 100%）
-done:
-  - "R6: 共享比较器 cases/_shared/comparator_check/compare.py + README；8 个旧案各补 R6 复用检查句"
-  - "R7: 12 条换电脑防线——versions.lock / ENGINE-GATE / check_state.py(OK) / ONEWRITER / submodule_gate(OK) / unique_router(OK) / AUTH-TEMPLATE / OFFLINE-QUEUE / SAMPLE-LOCAL / TWIN-TABLE / SAMPLE-GATE；REA 技能检查已在 R1/C5"
-  - "R8: 全领域回归通过（netwin/apk/ext/captcha/protocol/gorust/js 均一致）；V3.1-REPORT + GAPS 写就；README 追加 V3.1 领域；MANIFEST fusion_version=v3.1；定稿（G1/G2 部分达标见 GAPS）"
-next_step: "无（v3.1 完成）。后续：Track B（样本3+Seep）/ 真 Codex 往返 / ledger/verify/coverage 补会话内调用 / 换真实第三方样本"
-blocked:
-  - "无"
+current_stage: 第三方复核后修订，独立验收待完成
+current_domain: handoff-and-deployment
+status: 已修订交接基础设施；全领域与新机器验收未签发
+next_step: 按 cases/final/THIRD-PARTY-ACCEPTANCE.md 在 Pi 全新会话独立核对，按报告更新开放事项。
+audit_baseline: cd99b9c424138e30c6840f57553bfb37cd001830
+pi_test: pending
 open_items:
-  - "恶意软件领域：本执行显式不测（安全门范围外），不拦"
-  - "Rust/macOS/iOS/固件：推迟（工具链/设备/样本缺）"
-  - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-  - "bootstrap-reverse.ps1/.sh 未逐对 diff（TWIN-TABLE 记开放项）"
-last_commit: "6756be7d37a9607a07e2dd57fbbf088efddb3d83"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/6756be7d37a9607a07e2dd57fbbf088efddb3d83"
+  - "真实 Codex 往返与生产端到端证据未取得"
+  - "第二台计算机完整部署、宿主接线及缺失样本未验证"
+  - "领域表中的未覆盖项和 Track B 另行记录"
+  - "原始 FUSION-REVIEW-v3-AUDIT.md 未找到"
 evidence:
-  - "lifecycle/check_state.py"
-  - "lifecycle/versions.lock"
-  - "lifecycle/defenses/（ENGINE-GATE/ONEWRITER/AUTH-TEMPLATE/OFFLINE-QUEUE/SAMPLE-LOCAL/TWIN-TABLE/SAMPLE-GATE/submodule_gate.py/unique_router.py）"
+  - cases/final/THIRD-PARTY-AUDIT.md
+  - cases/final/THIRD-PARTY-FIXES.md
+  - cases/final/THIRD-PARTY-ACCEPTANCE.md
+  - cases/final/THIRD-PARTY-REPORT.md
+  - DEPLOYMENT-INVENTORY.md
