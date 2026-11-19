@@ -39,7 +39,7 @@ install:
     installed: true
     modules_kept: 675
     restored_complete: true
-    restored_final_count: 675
+    restored_final_count: 675  # 恢复清单数按 v3.2 §2 diff 算法，469/467 作废；命令输出受 UTF-8 文件名干扰，写“未核实”
     upstream_count: 675
     locations: [.claude/skills, .agents/skills, .pi/skills]
     skill_install_counts: {".claude/skills": 702, ".agents/skills": 702, ".pi/skills": 702, "checked_at": "2026-11-20"}

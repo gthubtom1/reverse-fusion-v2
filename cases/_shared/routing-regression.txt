@@ -1,0 +1,17 @@
+# 路由回归集（v3.2 §3.1：中英各 6 句 + 大小写变体，每阶段开头与 R8 必跑）
+# 格式：每行一个提示词；预期 PRIMARY 写在 \t#<route> 注释后
+#
+# 英文（6）
+reconstruct this apk	#R46
+rebuild this apk	#R46
+reconstruct this APK	#R46
+Rebuild This Apk	#R46
+reconstruct this android app	#R46
+analyze apk reverse engineering	#R1
+# 中文（6）
+复刻这个APK	#R46
+复刻这个 APK	#R46
+复刻这个Android APP	#R46
+复制这个安卓APK	#R1
+这个APK被加固了帮忙看看	#R1
+APK反编译分析	#R1

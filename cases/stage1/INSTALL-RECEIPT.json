@@ -3,8 +3,13 @@
   "stage": 1,
   "date": "2026-11-20",
   "installed": true,
-  "scope": ["rea", "reverse-skill"],
-  "deferred": ["seep"],
+  "scope": [
+    "rea",
+    "reverse-skill"
+  ],
+  "deferred": [
+    "seep"
+  ],
   "components": {
     "rea": {
       "installed": true,
@@ -15,7 +20,10 @@
       "evidence": {
         "cli_version": "6.9.0",
         "mcp_initialize_ok": true,
-        "mcp_server_info": {"name": "rea", "version": "6.9.0"},
+        "mcp_server_info": {
+          "name": "rea",
+          "version": "6.9.0"
+        },
         "mcp_tools_list_ok": true,
         "mcp_tool_count": 260,
         "claude_mcp_status": "Connected",
@@ -41,10 +49,15 @@
       "router_skill": true,
       "evidence": {
         "core_files": 208,
-        "skill_locations": [".claude/skills", ".agents/skills", ".pi/skills"],
+        "skill_locations": [
+          ".claude/skills",
+          ".agents/skills",
+          ".pi/skills"
+        ],
         "router_skill_md": true,
         "reconstruction_skill_md": true,
-        "check_handoff_runs": true
+        "check_handoff_help_runs": true,
+        "check_handoff_note": "真案子校验在 R2 做（checker PASS），此处仅 --help 跑过"
       },
       "limitations": [
         "未运行 check_handoff.py 的实际案子校验（第 2 阶段做）",
