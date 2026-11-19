@@ -1,26 +1,28 @@
 # 怎么跑第一个小目标（README 实操页）
 
+> **v3.2：路径不写死。** 下面所有 `<...>` 占位符的实际值都在唯一配置文件 `%USERPROFILE%/.fusion/fusion-home.yaml`（`shared_folder` / `node_exe` / `ghidra_install_dir` / `java_home`）。换盘只改这一行，再跑 `tools/fusion-sync.sh`（同步脚本会重写 `.mcp.json`、根 CLAUDE.md、全局技能指针）。
+
 ## 前置
 
-- 工作目录：`D:\Project\最终版聚合`（Windows，git bash）。
-- REA 需要 Node 24.22.1：`D:/Tools/node-24.22.1/node-v24.22.1-win-x64/node.exe`。
-- REA 需要 Ghidra 12.2（`D:/Tools/Ghidra-12.2/ghidra_12.2_PUBLIC`）与 JDK 25（`D:/Tools/jdk25`），通过 `.mcp.json` 的 `env` 注入。
-- 原版样本文件放在仓库外：样本 1 `D:/tmp/fusion-samples/s1/CrackMe.exe`，样本 2 `D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen`（不随仓库分发）。
-- 样本 2 是 ELF，需要 Linux：用 QEMU `C:/Program Files/qemu/qemu-system-x86_64.exe` + Alpine 内核 `D:/tmp/alpine/vmlinuz-virt` + 静态 busybox `D:/tmp/alpine/busybox`。
+- 工作目录：共享文件夹（`fusion-home.yaml` 的 `shared_folder`）。
+- REA 需要 Node：`fusion-home.yaml` 的 `node_exe`（版本见 `lifecycle/versions.lock`）。
+- REA 需要 Ghidra + JDK：`fusion-home.yaml` 的 `ghidra_install_dir` / `java_home`，经 `.mcp.json` 的 `env` 注入。
+- 原版样本：样本 1/2 的原始文件在共享文件夹（本轮为 D 盘，路径随部署；快速复制见 `cases/deploy/DEPLOY-REPORT.md`）。
+- 样本 2（ELF）跑 Linux 侧：QEMU + Alpine 内核，路径同为部署时配置。
 
 ## 怎么看装上了
 
-- 工具列表：`python -I cases/stage1/mcp_probe.py <node.exe> engine/rea/scripts/rea.mjs cases/stage1/tools-list-rea.json mcp`，看 `tool_count=260`。
-- REA 体检：`<node.exe> engine/rea/scripts/rea.mjs doctor`（`ghidra*` 应 healthy）。
-- 技能安装：`.claude/skills/`、`.agents/skills/`、`.pi/skills/` 三个目录都有 `reverse-skill-router/SKILL.md` 和 `reconstruction/SKILL.md`。
+- 工具列表：`python -I cases/stage1/mcp_probe.py <node_exe> engine/rea/scripts/rea.mjs cases/stage1/tools-list-rea.json mcp`，看 `tool_count=260`。
+- REA 体检：`<node_exe> engine/rea/scripts/rea.mjs doctor`（`ghidra*` 应 healthy）。
+- 技能安装（v3.2 指针式）：`~/.claude`、`~/.codex`、`~/.pi` 三个全局技能目录都有 `reverse-skill-router/SKILL.md`（仅指针，指向 `shared_folder/core/skills/SKILL.md`）。旧的 `.claude/skills`、`.agents/skills`、`.pi/skills` 三份拷贝按 v3.2 §11.2 废止。
 
 ## 怎么跑样本 1
 
 ```bash
 # 反编译与验收（详见 cases/sample-1）
-python -I cases/sample-1/reimpl/differential_test.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-006-differential.json
-python -I cases/sample-1/reimpl/boundary_test.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-008-boundary.json
-python -I cases/sample-1/reimpl/comparator_check.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-007-comparator-selfcheck.json
+python -I cases/sample-1/reimpl/differential_test.py <SHARED_FOLDER>/samples/s1/CrackMe.exe cases/sample-1/evidence/E-006-differential.json
+python -I cases/sample-1/reimpl/boundary_test.py <SHARED_FOLDER>/samples/s1/CrackMe.exe cases/sample-1/evidence/E-008-boundary.json
+python -I cases/sample-1/reimpl/comparator_check.py <SHARED_FOLDER>/samples/s1/CrackMe.exe cases/sample-1/evidence/E-007-comparator-selfcheck.json
 # 独立实现（密码 mr1337）
 python -I cases/sample-1/reimpl/validator.py mr1337
 ```
@@ -31,11 +33,11 @@ python -I cases/sample-1/reimpl/validator.py mr1337
 
 ```bash
 # 生成序列号（需先装 capstone/unicorn/elftools）
-python -I cases/sample-2/reimpl/keygen.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen alice bob@example.com
+python -I cases/sample-2/reimpl/keygen.py <SHARED_FOLDER>/samples/s2/howo-not-to-simple-keygen alice bob@example.com
 # 五用例（2 个由 keygen 生成，3 个无效输入）
-python -I cases/sample-2/reimpl/run_cases.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen D:/tmp/s2cases.json cases/sample-2/evidence/E-005-five-cases.json
+python -I cases/sample-2/reimpl/run_cases.py <SHARED_FOLDER>/samples/s2/howo-not-to-simple-keygen <SHARED_FOLDER>/tmp/s2cases.json cases/sample-2/evidence/E-005-five-cases.json
 # 表一致性验证
-python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen cases/sample-2/evidence/E-004-table-alice.bin alice bob@example.com
+python -I cases/sample-2/reimpl/verify_table.py <SHARED_FOLDER>/samples/s2/howo-not-to-simple-keygen cases/sample-2/evidence/E-004-table-alice.bin alice bob@example.com
 ```
 
 预期：TC1/TC2 accepted（打印 flag），TC3–TC5 denied；`verify_table` 输出 `match True`。
@@ -55,7 +57,7 @@ python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-no
 
 ## v3 各领域怎么跑（Stage 11 汇总入口 + V3.1 R5 追加）
 
-前置：Node `D:/Tools/node-24.22.1/node-v24.22.1-win-x64/node.exe`（或把 node 加入 PATH 后直接 `node`）。所有样本均为自建学习目标（第三方样本下载网络不稳，如实记录）。
+前置：Node `<node_exe>`（或把 node 加入 PATH 后直接 `node`）。所有样本均为自建学习目标（第三方样本下载网络不稳，如实记录）。
 
 | 领域 | 入口命令 | 案子路径 | 验收文件 |
 |---|---|---|---|
