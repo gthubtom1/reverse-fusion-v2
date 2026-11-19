@@ -1,0 +1,16 @@
+# 交接复核：四条勘误与阶段状态
+
+基准提交：[`bd1ddad4dc9c0d459f93d1d7c81db9a9cd566bc6`](https://github.com/gthubtom1/reverse-fusion-v2/tree/bd1ddad4dc9c0d459f93d1d7c81db9a9cd566bc6)。本轮按交接要求复核四条事实，并在下表记录应采用的表述；没有改动冻结方案、执行顺序或固定提交。下表的「通过」仅指文档或上游元数据的核对通过，不是本机实测，也不改变第 0 步结果。
+
+| 项 | 复核结果与应采用的表述 | 本轮实际核对的依据 |
+|---|---|---|
+| 1. 交接单和检查工具 | **文档通过。** 人读交接单和机器读取的 JSON 清单是两个用途，共用同一份原案和原始证据。检查器位于 `skills/reconstruction/scripts/check_handoff.py`，可查引用和文件指纹，不能证明结果含义正确。计算器示例第 5 条的原版输出应标为「未知、未验证」，不计入实测。 | [`FUSION-FINAL-v2.md` 第 324、367、371、376、647 行](../../FUSION-FINAL-v2.md)；固定提交的 [R46 第 69–76 行](https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reconstruction/SKILL.md#L69-L76)；[交接格式第 19、29–34、68–70 行](https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reconstruction/references/handoff-manifest.md#L19)。未运行检查器。 |
+| 2. L0–L6 与实测 | **文档通过。** L0：识别目标及格式；L1：得到可读的分析输出，注明限制；L2：有证据支持的关键调用和数据流；L3：有实测输入输出支持的所选行为模型；L4：独立实现在核心场景中与原版对照通过；L5：所选边界、错误和副作用场景也有新鲜的对照证据；L6：声称接近原始源码须有来源及构建证据。独立运行和故意做错的对照检查分别记录；抓到一个错误只是证明检查工具能发现差异。原计划的用例数量和验收条件未改。 | [R46 第 29–39、90、98 行](https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reconstruction/SKILL.md#L29-L39)；[`FUSION-FINAL-v2.md` 第 388–394、515–519、552–555 行](../../FUSION-FINAL-v2.md)。未运行行为测试。 |
+| 3. 固定版本、缺号、镜像文件 | **元数据通过。** 固定的 reverse-skill 清单有 45 条规则和 45 个优先项，含 R44；只缺 R42、R43。正式 `v1.9.0` 存在且不是预发布，指到 `7cc3109bf14a570c9c852dc76cce05fff424e88c`。项目仍锁定 `ce675096e6a2cd4789a76f9bd618feddc2b6f333`。Seep 的同名检查脚本在两份上游镜像中各有一份，计划取用的两个目录中未找到；未验证镜像脚本能否运行。 | 读取并解析固定提交的 [路由清单第 215、338–341 行](https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/config/routing.json#L215)，用 [GitHub 发布记录](https://github.com/gthubtom1/reverse-skill/releases/tag/v1.9.0) 和标签对象核对指向；查询 [Seep 固定提交完整文件树](https://api.github.com/repos/angusdevgo/Seep-Reverse-Lab/git/trees/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e?recursive=1) 返回两条同名文件路径。原先差异见 [`VALIDATION-REPORT.md` 第 31、36、38 行](../../VALIDATION-REPORT.md)。 |
+| 4. 查到资料不等于装好能用 | **文档通过，本机未实测。** REA 的包资料写明 `rea-agents` 6.9.0，固定提交的文档能查到证据导出和比对名称；从活动会话取出记录与整理已有记录是两件事。Spec Kit 文档基准是 `v1.3.0`，该标签的包资料写 `1.3.0`；这些资料不是本机安装、参数适配或运行回执。 | REA 固定提交的 [包资料](https://github.com/morluto/rea/blob/4491c84c82140a43fa12390b727840a433875ba8/package.json)、[命令文档第 925、935–940 行](https://github.com/morluto/rea/blob/4491c84c82140a43fa12390b727840a433875ba8/docs/getting-started/cli.md#L925-L940)、[接口说明第 28–29、323、981 行](https://github.com/morluto/rea/blob/4491c84c82140a43fa12390b727840a433875ba8/docs/reference/mcp-contracts.md#L28)；[Spec Kit 上游工作流第 7、43 行](https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reconstruction/references/spec-kit-workflow.md#L43) 和 [包资料第 2–3、22 行](https://github.com/github/spec-kit/blob/v1.3.0/pyproject.toml#L2-L22)。未安装，也未验证本机工具列表。 |
+
+## 阶段决定
+
+- 交接词第 3 行要求不开新版本，第 31 行又要求新建 v2.1；本轮只保存独立核对记录，没有建立新方案版本，也没有把外部交接中的声明记作原方案已发布。
+- **第 0 步仍不通过，第 1 阶段未开始。** 冻结方案第 444–449 行的出口条件未满足；原报告第 40、51 行的未核实项及本地签出缺口仍在，样本清单第 7–11 行没有新增结果。交接词第 34 行把安装、接线和工具列表核验放在第 1 阶段；冻结方案第 477–478、484–503 行把接线放在第 2 阶段。本轮未合并这两个阶段，也未搭建许可证绕过或自动规避保护的流程。
+- 已完成的动作仅为读取交接词、核对仓库与固定提交资料、比对上游元数据及记录结果。没有完整拉取三仓、安装、接线、列运行工具或跑样本。
