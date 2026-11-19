@@ -1,0 +1,6 @@
+[submodule "engine/rea"]
+	path = engine/rea
+	url = https://github.com/morluto/rea
+[submodule "upstream/reverse-skill"]
+	path = upstream/reverse-skill
+	url = https://github.com/gthubtom1/reverse-skill

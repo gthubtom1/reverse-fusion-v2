@@ -1,0 +1,61 @@
+{
+  "project": "reverse-fusion-v2",
+  "stage": 1,
+  "date": "2026-11-20",
+  "installed": true,
+  "scope": ["rea", "reverse-skill"],
+  "deferred": ["seep"],
+  "components": {
+    "rea": {
+      "installed": true,
+      "pinned_commit": "4491c84c82140a43fa12390b727840a433875ba8",
+      "local_head": "4491c84c82140a43fa12390b727840a433875ba8",
+      "package_version": "6.9.0",
+      "node_runtime": "24.22.1",
+      "evidence": {
+        "cli_version": "6.9.0",
+        "mcp_initialize_ok": true,
+        "mcp_server_info": {"name": "rea", "version": "6.9.0"},
+        "mcp_tools_list_ok": true,
+        "mcp_tool_count": 260,
+        "claude_mcp_status": "Connected",
+        "key_tools_present": {
+          "compare_functions": true,
+          "compare_artifacts": true,
+          "export_evidence_bundle": true,
+          "compare_managed_members": true
+        }
+      },
+      "limitations": [
+        "rea doctor 总体 healthy=false：hopper 缺失、ida-registration 缺失、jadx 缺失、ghidra-java runtime_failure、ghidra-version config_drift；ghidra-headless 为 healthy",
+        "npm ci 的生命周期脚本在本机 cmd 子进程拿不到 PATH；最终用 --ignore-scripts 安装依赖，再单独执行 npm run compile，未运行 husky/release-please 补丁脚本",
+        "项目级 .mcp.json 的 rea 在 Claude Code 里需要用户批准；同一端点已用 local scope 注册并通过 claude mcp list 显示 Connected"
+      ]
+    },
+    "reverse-skill": {
+      "installed": true,
+      "pinned_commit": "ce675096e6a2cd4789a76f9bd618feddc2b6f333",
+      "local_head": "ce675096e6a2cd4789a76f9bd618feddc2b6f333",
+      "version_file": "1.9.0",
+      "modules_kept": 14,
+      "router_skill": true,
+      "evidence": {
+        "core_files": 208,
+        "skill_locations": [".claude/skills", ".agents/skills", ".pi/skills"],
+        "router_skill_md": true,
+        "reconstruction_skill_md": true,
+        "check_handoff_runs": true
+      },
+      "limitations": [
+        "未运行 check_handoff.py 的实际案子校验（第 2 阶段做）",
+        "三个安装位置是 core/ 的副本，未做三份一致性哈希比对之外的独立验证"
+      ]
+    }
+  },
+  "sources": {
+    "local_checkout": "cases/stage1/LOCAL-CHECKOUT.md",
+    "mcp_tools": "cases/stage1/tools-list-rea.json",
+    "doctor": "cases/stage1/rea-doctor.txt",
+    "report": "cases/stage1/STAGE1-REPORT.md"
+  }
+}

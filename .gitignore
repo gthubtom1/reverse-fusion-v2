@@ -1,0 +1,8 @@
+# 安装副本由 core/ 复制生成，保留源头即可复现，不重复入库
+.claude/skills/
+.agents/skills/
+.pi/skills/
+
+# 子模块内的依赖与构建产物不入库
+engine/rea/node_modules/
+engine/rea/dist/

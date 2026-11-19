@@ -1,0 +1,398 @@
+healthy: false
+environment_healthy: false
+scope:
+  mode: audit-wide
+  clients: []
+  providers: []
+  skill: false
+  target: null
+scope_checks[25]:
+  - name: node
+    ok: true
+    classification: healthy
+    detail: 24.22.1
+    details:
+      runtime: node
+      version: 24.22.1
+  - name: host
+    ok: true
+    classification: healthy
+    detail: win32 x64
+  - name: hopper
+    ok: false
+    classification: missing_analysis_engine
+    remediation: "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+  - name: ghidra
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra"
+  - name: ghidra-platform
+    ok: true
+    classification: healthy
+    detail: win32
+  - name: ghidra-architecture
+    ok: true
+    classification: healthy
+    detail: x64
+  - name: ghidra-installation
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\Ghidra\\application.properties"
+  - name: ghidra-version
+    ok: false
+    classification: config_drift
+    detail: 12.1.3; accepted releases are 12.x (>=12.2) (verified build 12.2)
+    remediation: "Install a Ghidra 12.x (>=12.2) release (verified with 12.2), or update REA for another Ghidra line."
+  - name: ghidra-headless
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\support\\analyzeHeadless.bat"
+  - name: ghidra-native_decompiler
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64"
+  - name: ghidra-java
+    ok: false
+    classification: runtime_failure
+    detail: "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe: REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded."
+    remediation: Update JAVA_HOME to the root of a 64-bit full JDK 21 or newer installation.
+  - name: ida-registration
+    ok: false
+    classification: missing_analysis_engine
+    detail: IDA MCP registration is not configured.
+    remediation: Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/providers/ida-provider.md.
+  - name: jadx
+    ok: false
+    classification: missing_dependency
+    detail: "REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded."
+    remediation: Use a matching current Windows x64 REA package with its bundled native controls. The native failure above identifies the failed constraint; Java installation or registration changes cannot enable a missing native backend.
+    details:
+      failure_stage: artifact
+      remediation: "Use the matching published Windows x64 REA package. Restore native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from a same-version rea-agents tarball only for its corresponding release source. Matching package version alone is insufficient for an unreleased checkout; otherwise build them from this exact source checkout using native/windows/README.md. The loader checks version, ABI, architecture, and digest before granting authority; no download or install is performed automatically."
+  - name: kuna-installation
+    ok: false
+    classification: missing_analysis_engine
+    detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+    remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+    details:
+      configured: false
+  - name: "skill:identity"
+    ok: false
+    classification: config_drift
+    detail: Installed REA skill identity is missing.
+    remediation: Run rea setup to update the installed REA skill.
+  - name: "registration:claude_code"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.claude.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:claude_desktop"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\claude_desktop_config.json"
+    remediation: "Quit Claude Desktop fully, run rea setup to refresh this registration, then start Claude Desktop again. A running Claude Desktop can rewrite its configuration from memory and drop the registration."
+  - name: "registration:codebuddy"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.codebuddy\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:codex"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.codex\\config.toml"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:copilot_cli"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.copilot\\mcp-config.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:dsh"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.dsh\\cordis.patch.yml"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:opencode"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.config\\opencode\\opencode.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:pi"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.pi\\agent\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:vscode"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\AppData\\Roaming\\Code\\User\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:workbuddy"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.workbuddy\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+informational_checks: []
+providerInspections[4]:
+  - id: ghidra
+    configured: true
+    available: false
+    providerVersion: 12.1.3
+    registrationEnvironment:
+    checks[8]{name,ok,code,detail,remediation,classification}:
+      configuration,true,null,"D:\\Tools\\Ghidra",null,config_drift
+      platform,true,null,win32,null,unsupported_host
+      architecture,true,null,x64,null,unsupported_host
+      installation,true,null,"D:\\Tools\\Ghidra\\Ghidra\\application.properties",null,config_drift
+      version,false,unsupported_version,12.1.3; accepted releases are 12.x (>=12.2) (verified build 12.2),"Install a Ghidra 12.x (>=12.2) release (verified with 12.2), or update REA for another Ghidra line.",config_drift
+      headless,true,null,"D:\\Tools\\Ghidra\\support\\analyzeHeadless.bat",null,config_drift
+      native_decompiler,true,null,"D:\\Tools\\Ghidra\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64",null,config_drift
+      java,false,runtime_unavailable,"D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe: REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded.",Update JAVA_HOME to the root of a 64-bit full JDK 21 or newer installation.,runtime_failure
+  - id: ida
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]{name,ok,code,detail,remediation,classification}:
+      registration,false,not_configured,IDA MCP registration is not configured.,Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/providers/ida-provider.md.,missing_analysis_engine
+  - id: jadx
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]:
+      - name: configuration
+        ok: false
+        code: runtime_missing
+        detail: "REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded."
+        remediation: Use a matching current Windows x64 REA package with its bundled native controls. The native failure above identifies the failed constraint; Java installation or registration changes cannot enable a missing native backend.
+        classification: missing_dependency
+        details:
+          failure_stage: artifact
+          remediation: "Use the matching published Windows x64 REA package. Restore native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from a same-version rea-agents tarball only for its corresponding release source. Matching package version alone is insufficient for an unreleased checkout; otherwise build them from this exact source checkout using native/windows/README.md. The loader checks version, ABI, architecture, and digest before granting authority; no download or install is performed automatically."
+  - id: kuna
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]:
+      - name: installation
+        ok: false
+        code: not_configured
+        detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+        remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+        classification: missing_analysis_engine
+        details:
+          configured: false
+checks[25]:
+  - name: node
+    ok: true
+    classification: healthy
+    detail: 24.22.1
+    details:
+      runtime: node
+      version: 24.22.1
+  - name: host
+    ok: true
+    classification: healthy
+    detail: win32 x64
+  - name: hopper
+    ok: false
+    classification: missing_analysis_engine
+    remediation: "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+  - name: ghidra
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra"
+  - name: ghidra-platform
+    ok: true
+    classification: healthy
+    detail: win32
+  - name: ghidra-architecture
+    ok: true
+    classification: healthy
+    detail: x64
+  - name: ghidra-installation
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\Ghidra\\application.properties"
+  - name: ghidra-version
+    ok: false
+    classification: config_drift
+    detail: 12.1.3; accepted releases are 12.x (>=12.2) (verified build 12.2)
+    remediation: "Install a Ghidra 12.x (>=12.2) release (verified with 12.2), or update REA for another Ghidra line."
+  - name: ghidra-headless
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\support\\analyzeHeadless.bat"
+  - name: ghidra-native_decompiler
+    ok: true
+    classification: healthy
+    detail: "D:\\Tools\\Ghidra\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64"
+  - name: ghidra-java
+    ok: false
+    classification: runtime_failure
+    detail: "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe: REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded."
+    remediation: Update JAVA_HOME to the root of a 64-bit full JDK 21 or newer installation.
+  - name: ida-registration
+    ok: false
+    classification: missing_analysis_engine
+    detail: IDA MCP registration is not configured.
+    remediation: Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/providers/ida-provider.md.
+  - name: jadx
+    ok: false
+    classification: missing_dependency
+    detail: "REA Windows native controls are unavailable: Missing packaged Windows native file native/windows/build/manifest.json (ENOENT). Restore both native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from the rea-agents@6.9.0 tarball only when this checkout matches that published release's native contract. Matching package version alone is insufficient; otherwise build them from this exact source checkout using native/windows/README.md. No native artifact was loaded."
+    remediation: Use a matching current Windows x64 REA package with its bundled native controls. The native failure above identifies the failed constraint; Java installation or registration changes cannot enable a missing native backend.
+    details:
+      failure_stage: artifact
+      remediation: "Use the matching published Windows x64 REA package. Restore native/windows/build/manifest.json and native/windows/build/rea-windows-x64.node from a same-version rea-agents tarball only for its corresponding release source. Matching package version alone is insufficient for an unreleased checkout; otherwise build them from this exact source checkout using native/windows/README.md. The loader checks version, ABI, architecture, and digest before granting authority; no download or install is performed automatically."
+  - name: kuna-installation
+    ok: false
+    classification: missing_analysis_engine
+    detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+    remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.1000). REA does not download, install or update Kuna."
+    details:
+      configured: false
+  - name: "skill:identity"
+    ok: false
+    classification: config_drift
+    detail: Installed REA skill identity is missing.
+    remediation: Run rea setup to update the installed REA skill.
+  - name: "registration:claude_code"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.claude.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:claude_desktop"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\claude_desktop_config.json"
+    remediation: "Quit Claude Desktop fully, run rea setup to refresh this registration, then start Claude Desktop again. A running Claude Desktop can rewrite its configuration from memory and drop the registration."
+  - name: "registration:codebuddy"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.codebuddy\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:codex"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.codex\\config.toml"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:copilot_cli"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.copilot\\mcp-config.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:dsh"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.dsh\\cordis.patch.yml"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:opencode"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.config\\opencode\\opencode.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:pi"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.pi\\agent\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:vscode"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\AppData\\Roaming\\Code\\User\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+  - name: "registration:workbuddy"
+    ok: false
+    classification: config_drift
+    detail: "C:\\Users\\toti\\.workbuddy\\mcp.json"
+    remediation: "Run rea setup to refresh this registration, then restart the client."
+identity:
+  cli_package_version: 6.9.0
+  expected_skill_version: "63"
+  sdk:
+    server: 2.3.1
+    client_test: 2.3.1
+    core: 2.3.1
+  catalog:
+    counts:
+      cli_commands: 201
+      mcp_tools: 260
+      mcp_prompts: 6
+    digests:
+      tools_sha256: f4c711be9bc632e84f2d0af2cc2c3d0b0194ee93bb46d742567a3be42f9df138
+      prompts_sha256: 60078bd8ef8bd152b51440e7579fba2059beec18fec5148dd0ec10ef013213fe
+      combined_sha256: eec9c734f1ecb827b85d0b5031d77a6a35c026ebcc7f1a943137fd717b34ab2a
+  live_server:
+    state: unknown
+    remediation: "Call binary_session in the active client to inspect the running server identity; a registration whose saved scope omits the session family cannot report it, so include session through rea setup --tool-families and restart first."
+  installations:
+    paths: []
+    state: unknown
+  skill:
+    installed_version: null
+    installed_tool_count: null
+    state: missing
+    remediation: Run rea setup to update the installed REA skill.
+  registrations[10]:
+    - client: claude_code
+      config_path: "C:\\Users\\toti\\.claude.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: claude_desktop
+      config_path: "C:\\Users\\toti\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\claude_desktop_config.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Quit Claude Desktop fully, run rea setup to refresh this registration, then start Claude Desktop again. A running Claude Desktop can rewrite its configuration from memory and drop the registration."
+    - client: codebuddy
+      config_path: "C:\\Users\\toti\\.codebuddy\\mcp.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: codex
+      config_path: "C:\\Users\\toti\\.codex\\config.toml"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: copilot_cli
+      config_path: "C:\\Users\\toti\\.copilot\\mcp-config.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: dsh
+      config_path: "C:\\Users\\toti\\.dsh\\cordis.patch.yml"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: opencode
+      config_path: "C:\\Users\\toti\\.config\\opencode\\opencode.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: pi
+      config_path: "C:\\Users\\toti\\.pi\\agent\\mcp.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: vscode
+      config_path: "C:\\Users\\toti\\AppData\\Roaming\\Code\\User\\mcp.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
+    - client: workbuddy
+      config_path: "C:\\Users\\toti\\.workbuddy\\mcp.json"
+      command: []
+      command_identity: unknown
+      state: missing
+      remediation: "Run rea setup to refresh this registration, then restart the client."
