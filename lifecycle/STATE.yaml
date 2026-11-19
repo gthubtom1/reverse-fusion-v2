@@ -1,18 +1,20 @@
-current_stage: 12
-current_domain: final
-status: 完成（v3 定版；3 项缺口见 cases/final/GAPS.md；不宣称 100%）
+current_stage: R1
+current_domain: routing-fix
+status: R1 完成（待提交）
 done:
-  - "Stage 5A-12 全部完成：5A(恢复)/5 JS通过/6 APK部分/7 扩展通过/8 协议通过/9 自动化通过/10 验证码通过/11 汇总回归/12 定版"
-  - "V3-REPORT 写就：基本完成，3 缺口（Seep 未做=Track B；APK 未成 dex；文件数口径）"
-next_step: "无（v3 阶段完毕）。后续走 Track B（样本3+Seep）/ 换 dex 工具补 APK / 换真实第三方样本重跑各领域"
+  - "R0: v3-frozen 标签已推送（dafdd9e）；v3.1 文档已归档"
+  - "R1: 路由修好——C1 回归（apk/reconstruct 分流对）、C2 四提示词进 R46、C3 Seep 触发记录、C4 scope.md 工具声明、C5 REA 技能 0 混入、C10 tool-index 生成"
+next_step: "R2：接证据链——样本1/2 各补 handoff-manifest.json + EVIDENCE-MAP.md + E号拆分 + 真跑检查器 + 样本1 一次 Codex 往返回执"
 blocked:
   - "无"
 open_items:
+  - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（v3 引用但未提交）——按 v3.1 正文/改动清单执行，缺口记为开放项"
+  - "check_state.py 未建（R7 才做）"
   - "jshookmcp 未装（以后再说）"
-  - "APK d8 崩未成 dex（以后再说）"
-  - "Stage 6 为部分通过（唯一非通过项）"
-  - "第三方样本下载网络不稳，样本自建"
-last_commit: "e9a54f613c49f56be05c6215b0e403b0b4b0b3bf"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/e9a54f613c49f56be05c6215b0e403b0b4b0b3bf"
+  - "APK d8 崩未成 dex（以后再说，R2/R3 再试一次已装工具链）"
+last_commit: "dafdd9e84f9951591aa93b2ae2867a0497a49629"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/dafdd9e84f9951591aa93b2ae2867a0497a49629"
 evidence:
-  - "cases/final/V3-REPORT.md、cases/final/GAPS.md（Stage 12）"
+  - "core/skills/config/routing.json（R46 组合规则）"
+  - "lifecycle/V31-C3-SEEP-TRIGGER.md"
+  - "core/skills/tool-index.md（已生成）"

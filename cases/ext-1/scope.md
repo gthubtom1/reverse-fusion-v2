@@ -1,5 +1,7 @@
 # scope.md — cases/ext-1
 
+**第一行（C4）：模式 3 算法抽取；第一个工具：`js-reverse_list_scripts`（js-reverse_* MCP；装不上走 REA `analyze_javascript_application`）。**
+
 **本案模式是 算法抽取（模式 3），验收词是「算法抽取：通过 / 部分通过 / 不通过」，不适用 L4/L5。**
 
 - 目标：一个 MV3 浏览器扩展的签名算法（`tokenFor(pageUrl)`），解包 → 读 manifest → 定位 background/service_worker → 复现 → 5 用例对照。

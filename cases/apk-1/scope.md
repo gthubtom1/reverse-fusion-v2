@@ -1,5 +1,7 @@
 # scope.md — cases/apk-1
 
+**第一行（C4）：模式 3 算法抽取；第一个工具：REA `open_binary` → `inspect_android_package`；备选 jadx/apktool（技能里 CLI）；两个都试过写报错才手动反编译。**
+
 **本案模式是 算法抽取（模式 3），验收词是「算法抽取：通过 / 部分通过 / 不通过」，不适用 L4/L5。**
 
 - 目标：一个带序列号校验的 Android 学习目标（license validation 算法），用 jadx 反编译定位校验函数，Node 本地复现，5 用例与「原版」双侧对照。

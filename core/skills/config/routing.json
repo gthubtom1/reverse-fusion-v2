@@ -322,7 +322,8 @@
       "label": "Evidence-driven reconstruction / verification",
       "skill": "reconstruction/SKILL.md",
       "keywords": [
-        { "must": "复刻|独立.?实现|行为.?等价|reconstruct(?:ion)?|replica.?implementation|behavior(?:al)?.?(?:equivalence|comparison)", "note": "Explicit reconstruction stage. Existing target-specific priorities remain above this route; analyze mixed requests before handing off." }
+        { "must": "复刻|独立.?实现|行为.?等价|reconstruct(?:ion)?|rebuild|replica.?implementation|behavior(?:al)?.?(?:equivalence|comparison)", "note": "Explicit reconstruction stage." },
+        { "must": "(?:reconstruct|rebuild|复刻).*(?:apk|android)|(?:apk|android).*(?:reconstruct|rebuild|复刻)", "note": "重建意图 + apk/android 组合归 R46（C2 修复：往 R46 走，不被 R1 抢）" }
       ]
     },
     "R0": {

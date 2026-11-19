@@ -1,5 +1,7 @@
 # scope.md — cases/js-1
 
+**第一行（C4）：模式 3 算法抽取；第一个工具：`js-reverse_list_scripts`（js-reverse_* MCP；装不上才走 REA `analyze_javascript_application`，两个都试过写报错才 Node 本地复现）。**
+
 **本案模式是 算法抽取（模式 3），验收词是「算法抽取：通过 / 部分通过 / 不通过」，不适用 L4/L5（不写「L4 通过」「新程序」）。**
 
 - 目标类型：JS / 网页算法（自托管验证页）

@@ -1,5 +1,8 @@
 # 案子范围：样本 1（XOR Challenge By 0xbadc0de）
 
+**第一行（C4，v3.1 补充）：模式 1 全重建（样本 1 走 R46 规格链）；第一个工具：REA `open_binary` → `binary_overview`；备用 Ghidra 无头。**
+**进 R46 的命令（v3.1 §3.1 C2）：`master-route.ps1 --primary R46`（或 `.sh` 同款）；输出里 `confidence: explicit`。**
+
 - 案子编号：sample-1
 - 目标文件：`CrackMe.exe`，111,104 字节
 - SHA-256：`945e81e113e09002db42b26f69cd43de564c32a03971fdf335e2f81caca6c67a`
