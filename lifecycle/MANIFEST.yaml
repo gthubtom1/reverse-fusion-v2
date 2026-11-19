@@ -65,7 +65,10 @@ stage_status:
   stage_1: 完成（签出、安装、工具列表、安装回执）
   stage_2: 完成（REA MCP 接线、证据落盘、交接单模板）
   stage_3: 样本 1 达到 L4；样本 2 达到本轮口径；样本 3 未执行
-  stage_4: 未开始
+  stage_4:
+    status: 完成
+    date: 2026-11-20
+    what: lifecycle 五件套齐全（USED-FUNCTIONS.md、DECISION-LOG.md D1-D9、UPDATE-CHECK.md、UPDATE-REPORT-TEMPLATE.md），README 重写为前置+复现命令；定版仍为 v2.1
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
