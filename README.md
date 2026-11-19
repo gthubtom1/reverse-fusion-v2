@@ -1,43 +1,55 @@
-# reverse-fusion-v2 | 第 1–3 阶段执行交接
+# 怎么跑第一个小目标（README 实操页）
 
-这个仓库保存冻结方案、四条勘误写入后的 v2.1、第 1–3 阶段的安装与样本记录。供独立复核。
+## 前置
 
-当前状态（2026-11-20）：
+- 工作目录：`D:\Project\最终版聚合`（Windows，git bash）。
+- REA 需要 Node 24.22.1：`D:/Tools/node-24.22.1/node-v24.22.1-win-x64/node.exe`。
+- REA 需要 Ghidra 12.2（`D:/Tools/Ghidra-12.2/ghidra_12.2_PUBLIC`）与 JDK 25（`D:/Tools/jdk25`），通过 `.mcp.json` 的 `env` 注入。
+- 原版样本文件放在仓库外：样本 1 `D:/tmp/fusion-samples/s1/CrackMe.exe`，样本 2 `D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen`（不随仓库分发）。
+- 样本 2 是 ELF，需要 Linux：用 QEMU `C:/Program Files/qemu/qemu-system-x86_64.exe` + Alpine 内核 `D:/tmp/alpine/vmlinuz-virt` + 静态 busybox `D:/tmp/alpine/busybox`。
 
-| 阶段 | 状态 | 入口文件 |
-|---|---|---|
-| 方案 | v2.1 已写入四条勘误，v2.0 原文保留 | [FUSION-FINAL-v2.1.md](FUSION-FINAL-v2.1.md) · [FUSION-FINAL-v2.md](FUSION-FINAL-v2.md) |
-| 第 1 阶段 | 签出、安装、工具列表、安装回执完成 | [STAGE1-REPORT.md](cases/stage1/STAGE1-REPORT.md) · [INSTALL-RECEIPT.json](cases/stage1/INSTALL-RECEIPT.json) |
-| 第 2 阶段 | REA MCP 接线、证据落盘、交接单模板完成 | [WIRING.md](cases/stage2/WIRING.md) |
-| 第 3 阶段 | 样本 1 达到 L4；样本 2 达到本轮口径 | [STAGE3-REPORT.md](cases/stage3/STAGE3-REPORT.md) |
-| 第 4 阶段 | 未开始 | — |
+## 怎么看装上了
 
-样本：
+- 工具列表：`python -I cases/stage1/mcp_probe.py <node.exe> engine/rea/scripts/rea.mjs cases/stage1/tools-list-rea.json mcp`，看 `tool_count=260`。
+- REA 体检：`<node.exe> engine/rea/scripts/rea.mjs doctor`（`ghidra*` 应 healthy）。
+- 技能安装：`.claude/skills/`、`.agents/skills/`、`.pi/skills/` 三个目录都有 `reverse-skill-router/SKILL.md` 和 `reconstruction/SKILL.md`。
 
-| 样本 | 结果 | 报告 |
-|---|---|---|
-| 样本 1（Windows x86-64，XOR） | 5/5 核心用例一致；L4 通过，L5 未声明 | [ACCEPTANCE.md](cases/sample-1/ACCEPTANCE.md) |
-| 样本 2（ELF x86-64，自定义哈希） | 2 个有效序列号被接受、3 个无效输入被拒绝；验证规则与表生成已复现 | [ACCEPTANCE.md](cases/sample-2/ACCEPTANCE.md) |
-| 样本 3（UPX/反调试） | 未执行 | — |
+## 怎么跑样本 1
 
-关键事实与限制：
+```bash
+# 反编译与验收（详见 cases/sample-1）
+python -I cases/sample-1/reimpl/differential_test.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-006-differential.json
+python -I cases/sample-1/reimpl/boundary_test.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-008-boundary.json
+python -I cases/sample-1/reimpl/comparator_check.py D:/tmp/fusion-samples/s1/CrackMe.exe cases/sample-1/evidence/E-007-comparator-selfcheck.json
+# 独立实现（密码 mr1337）
+python -I cases/sample-1/reimpl/validator.py mr1337
+```
 
-- 两个上游都签出在锁定提交：REA `4491c84…`，reverse-skill `ce67509…`。Seep 本轮未签出、未安装（以后再说）。
-- REA MCP 本机 `tools/list` 返回 260 个工具，`compare_functions`、`compare_artifacts`、`export_evidence_bundle`、`compare_managed_members` 均存在。
-- REA 的 Windows Ghidra P0 只接受 PE/MZ，不支持 ELF；样本 2 的静态分析改用 Ghidra 12.2 无头模式与 gdb（见样本 2 报告）。
-- 两个样本都没有声明 L5；样本 2 的哈希用 Unicorn 模拟原版机器码，不是高级语言独立重写。
-- `lifecycle/MANIFEST.yaml` 记录了锁定版本、安装状态、阶段状态和已知限制。
+预期：5 个核心用例 `all_match: true`，边界 6/6 `all_match: true`，坏变体 `detected_difference: true`。
 
-其他文件：
+## 怎么跑样本 2
 
-| 文件 | 用途 |
-|---|---|
-| [AGENTS.md](AGENTS.md) | 本项目交接约定 |
-| [CHANGE-REQUEST.md](CHANGE-REQUEST.md) | 四条勘误及其实施状态 |
-| [REVIEW-2.md](REVIEW-2.md) | 独立复核与修订建议 |
-| [VALIDATION-REPORT.md](VALIDATION-REPORT.md) | 第 0 步 15 项复核（历史结论） |
-| [cases/validation/](cases/validation/) | 第 0 步笔记、复核和停点记录 |
-| [cases/samples/MANIFEST.md](cases/samples/MANIFEST.md) | 三个样本的来源与指纹 |
-| [cases/templates/reconstruction-handoff.md](cases/templates/reconstruction-handoff.md) | 复刻交接单模板 |
+```bash
+# 生成序列号（需先装 capstone/unicorn/elftools）
+python -I cases/sample-2/reimpl/keygen.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen alice bob@example.com
+# 五用例（2 个由 keygen 生成，3 个无效输入）
+python -I cases/sample-2/reimpl/run_cases.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen D:/tmp/s2cases.json cases/sample-2/evidence/E-005-five-cases.json
+# 表一致性验证
+python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen cases/sample-2/evidence/E-004-table-alice.bin alice bob@example.com
+```
 
-复核时请区分「有命令输出支持」「有文件行号支持」「未核实」。本仓库不把未执行的阶段写成通过。
+预期：TC1/TC2 accepted（打印 flag），TC3–TC5 denied；`verify_table` 输出 `match True`。
+
+## 出了问题先看哪里
+
+- 写入成功与否，以命令退出码和生成的 json 为准，不靠聊天记录。
+- 看 `cases/stage1/STAGE1-REPORT.md`（安装）→ `cases/stage2/WIRING.md`（接线）→ `cases/stage3/STAGE3-REPORT.md`（样本结果）。
+- 若 REA 报 provider 不可用：重新核对 Ghidra/JDK 环境变量是否进了 `.mcp.json`；`node.exe` 是否为 24.22.1。
+- 若样本 2 无法启动：QEMU 内核/initramfs 是否就位；`qemu_run.py` 的路径硬编码在顶部。
+- 本项目的文件不在仓库里的部分（样本、运行库、工具）在仓库外，克隆后需按 README 前置补齐。
+
+## 已完成 / 未完成
+
+- 已做：v2.1 勘误；第 1–3 阶段（安装、接线、接线测试、样本 1 L4、样本 2 本轮口径）。
+- 未做：样本 3；第 4 阶段的「定版」与 lifecycle 的完整性走查（本轮补齐了 lifecycle 5 件套，定版号仍为 v2.1）。
+- 限制：样本 1/2 未声明 L5；Seep 未参与（以后再说）。
