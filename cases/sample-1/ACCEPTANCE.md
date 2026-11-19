@@ -2,6 +2,8 @@
 
 日期：2026-11-20（北京时间）。标准按 `FUSION-FINAL-v2.1.md` §5.4、§5.5。
 
+**R6（v3.1）复用检查（2026-11-20）：** 先查工具单（REA 260 工具 `cases/stage1/tools-list-rea.json`）——比对/验证类有 `compare_functions`、`compare_artifacts`、`export_evidence_bundle`（R3 已真调成功）；比较器自检这类「改常量看输出变」没有现成专用工具，故自写（`reimpl/comparator_check.py`），但**只写一份，R6 起统一引 `cases/_shared/comparator_check/compare.py`，不再每案重写**。
+
 **R3（v3.1）REA 验证链真调记录（2026-11-20）：** 在 REA 会话内对样本 1 真调：
 - `export_evidence_bundle` → **成功**，导出 `E-010-exported-bundle.json`（含 ev_23cd8d78… 与 ev_646685c7… 两条记录）；
 - `compare_functions`（left=ev_261a5d8f…[main]，right=ev_cdf672b5…[check]，同会话 analyze 后 retained）→ **成功**，返回 `ev_9e0b4ab3…`（rea-function-comparison，30KB 比较证据，E-012）；

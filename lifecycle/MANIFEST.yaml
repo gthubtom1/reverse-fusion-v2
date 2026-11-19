@@ -133,6 +133,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: 补领域——Stage 13 Windows+.NET（自建 .NET 校验，5 用例全对）；Stage 14 Go/Rust（自建 Go 校验，6 用例全对）；DOMAIN-VERDICTS.md 44 领域 verdict（恶意软件=范围外、固件/macOS/iOS=推迟理由、19+ 范围外一句理由）
+  R6:
+    status: 完成
+    date: 2026-11-20
+    what: 共用比较器 + 复用检查——cases/_shared/comparator_check/compare.py 共享入口；8 个旧案各补 R6 复用检查句（『先找工具』：compare_functions/export_evidence_bundle 已在 R3 真调）；新案不再新写比较器
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

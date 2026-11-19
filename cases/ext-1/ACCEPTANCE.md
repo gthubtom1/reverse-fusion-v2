@@ -1,5 +1,8 @@
 # 验收报告：cases/ext-1（Stage 7）
 
+**R6 复用检查：工具单查询——js-reverse_*/analyze_javascript_application 已有；比较器自检统一引 cases/_shared/comparator_check/compare.py（改 SECRET 防背答案），不再重写。**
+
+
 **本案模式是 算法抽取（模式 3），验收词是「算法抽取：通过」。不适用 L4/L5（本模式不要求）。**
 
 ## 0. 结论（两行分写）

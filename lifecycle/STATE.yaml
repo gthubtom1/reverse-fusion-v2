@@ -1,18 +1,19 @@
-current_stage: R5
-current_domain: domains
-status: R5 完成（待提交）
+current_stage: R6
+current_domain: shared-comparator
+status: R6 完成（待提交）
 done:
-  - "Stage 13（Windows+.NET+厚客户端）：自建 .NET 校验，5 用例双侧全对，比较器自检 ok"
-  - "Stage 14（Go/Rust）：自建 Go 校验，6 用例双侧全对"
-  - "DOMAIN-VERDICTS.md：44 领域 verdict；恶意软件=范围外不测、固件/macOS/iOS=推迟理由、19+ 范围外一句理由"
-next_step: "R6：共用比较器 + 复用检查——合并各案比较器脚本成 cases/_shared/comparator_check/；每旧案补一句复用检查"
+  - "R6: 共享比较器 cases/_shared/comparator_check/compare.py + README；8 个旧案（sample-1/apk-1/js-1/ext-1/protocol-1/automation-1/captcha-1/netwin-1/gorust-1）各补一句 R6 复用检查"
+  - "第 6 条『先找工具再写脚本』已写进共享 README；compare_functions/export_evidence_bundle 等已在 R3 真调过"
+next_step: "R7：换电脑防线——versions.lock、engine 清单门、check_state.py、单写者规则、子模块硬门、唯一路由文件、授权模板、离线待推箱、样本本地备用、.ps1/.sh 孪生表、REA 技能检查、样本下载先过恶意软件门"
 blocked:
   - "无"
 open_items:
   - "恶意软件领域：本执行显式不测（安全门范围外），不拦"
   - "Rust/macOS/iOS/固件：推迟（工具链/设备/样本缺）"
   - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-last_commit: "8baecac7bbf9b5486d0a54ac15183ae011b287b5"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/8baecac7bbf9b5486d0a54ac15183ae011b287b5"
+  - "8 案比较器曾各有一份（历史证据）已由 R6 收敛到共享；原文件保留，新案不再新写"
+last_commit: "475c9c89d2e587c2ace65a881cbf3112fb696ced"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/475c9c89d2e587c2ace65a881cbf3112fb696ced"
 evidence:
-  - "cases/netwin-1/ACCEPTANCE.md、cases/gorust-1/ACCEPTANCE.md、cases/final/DOMAIN-VERDICTS.md"
+  - "cases/_shared/comparator_check/compare.py"
+  - "各案 ACCEPTANCE.md 的 R6 复用检查行"

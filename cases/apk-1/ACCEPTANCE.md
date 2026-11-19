@@ -1,5 +1,8 @@
 # 验收报告：cases/apk-1（Stage 6）
 
+**R6 复用检查：工具单查询（REA 260 工具）——验证链有 compare_functions/export_evidence_bundle（R3 已用），序列号校验类自建（licensecheck 一次性）；比较器自检统一引 cases/_shared/comparator_check/compare.py（改常量防背答案），不再重写。**
+
+
 **本案模式是 算法抽取（模式 3），验收词是「算法抽取：部分通过」。不适用 L4/L5（本模式不要求）。**
 
 ## 0. 结论（两行分写）
