@@ -1,21 +1,22 @@
-current_stage: 8
-current_domain: protocol-1
+current_stage: 9
+current_domain: automation-1
 status: 进行中
 done:
-  - "Stage 5A 完成：reverse-skill 完整版已恢复"
-  - "Stage 5 完成：JS 算法抽取通过"
-  - "Stage 6 部分通过：APK 算法抽取（jadx 定位、Node 复现 5 用例双侧全对；d8 崩未成 APK）"
-  - "Stage 7 通过：浏览器扩展算法抽取（MV3 tokenFor，5 用例双侧全对，比较器自检过）"
-next_step: "Stage 8：协议——核实抓包工具 tshark/Wireshark；建一个自定义协议测试服务，抓包、还原字段、写 decode 脚本、5 报文双侧对照"
+  - "Stage 5A: reverse-skill 完整版恢复"
+  - "Stage 5: JS 算法抽取通过"
+  - "Stage 6: APK 算法抽取部分通过（d8 崩）"
+  - "Stage 7: 浏览器扩展算法抽取通过"
+  - "Stage 8: 协议算法抽取通过（tshark 抓包 + Node decode 5 报文全对）"
+next_step: "Stage 9：浏览器自动化观察——用前面 JS 测试页，跑一次自动化观察（打开、点、录请求链路），产出 observation.md"
 blocked:
   - "无"
 open_items:
   - "jshookmcp 未装/未注册（以后再说）"
   - "APK：d8 崩溃，需换工具再真机装"
-  - "第三方 APK/扩展下载网络不稳，样本均用自建"
-  - "Stage 8 的 tshark/Wireshark 是否已装未核实"
+  - "第三方 APK/扩展下载网络不稳，样本用自建"
+  - "wrapper scapy/tshark 是系统工具，跨网段抓包/TLS 未覆盖"
   - "core 675 vs v3 671、上游 676，数字差异原因未核实"
-last_commit: "45228f75da823411097ab2d550d2a3a3183d184b"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/45228f75da823411097ab2d550d2a3a3183d184b"
+last_commit: "d3e01dc8a8588bf58161cb885f8b37445b5dbd46"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/d3e01dc8a8588bf58161cb885f8b37445b5dbd46"
 evidence:
-  - "cases/ext-1/ACCEPTANCE.md（Stage 7 通过）"
+  - "cases/protocol-1/ACCEPTANCE.md（Stage 8 通过）"

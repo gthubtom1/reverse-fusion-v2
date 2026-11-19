@@ -1,0 +1,15 @@
+{
+  "stage": "protocol-1",
+  "date": "2026-11-20",
+  "mode": "algorithm extraction (mode 3)",
+  "pattern": "magic(2)=0xC0D0 | ver(1) | type(1) | len(2,LE) | payload | checksum(1,XOR of payload)",
+  "all_match": true,
+  "cases": [
+    {"TC":"T1","desc":"ver1 type5 'hello'", "frame":"c0d00105050068656c6c6f62","real":"OK:1:5","decode":"OK:1:5","match":true},
+    {"TC":"T2","desc":"ver2 type9 'world!'","frame":"c0d002090600776f726c642143","real":"OK:2:9","decode":"OK:2:9","match":true},
+    {"TC":"T3","desc":"ver1 type0 empty","frame":"c0d00100000000","real":"OK:1:0","decode":"OK:1:0","match":true},
+    {"TC":"T4","desc":"bad checksum","frame":"c0d00105050068656c6c6f00","real":"ERR:checksum","decode":"ERR:checksum","match":true},
+    {"TC":"T5","desc":"bad magic","frame":"00000105060068656c6c6f00","real":"ERR:magic","decode":"ERR:magic","match":true}
+  ],
+  "comparator": {"ok": true, "note": "改 payload 字节/校验字节 -> ERR:checksum；改 type 且 checksum 不变仍有效 -> OK。解码器依赖真实字节"}
+}
