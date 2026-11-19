@@ -15,7 +15,7 @@ public class DumpEntryOnly extends GhidraScript {
         ifc.openProgram(currentProgram);
         ConsoleTaskMonitor mon = new ConsoleTaskMonitor();
 
-        Function entry = getFunctionAt(currentProgram.getEntryPoint());
+        Function entry = currentProgram.getFunctionManager().getFunctionAt(currentProgram.getEntryPoint());
         out.println("ENTRY " + (entry == null ? "null" :
             entry.getName() + " @ " + entry.getEntryPoint()));
         if (entry != null) {

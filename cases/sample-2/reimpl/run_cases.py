@@ -24,9 +24,10 @@ cases = json.load(open(cases_path, encoding="utf-8"))
 
 records = []
 for c in cases:
-    payload = "%s\n%s\n%s\n" % (c["name"], c["email"], c["serial"])
-    fd, infile = tempfile.mkstemp(prefix="s2in-", dir=r"D:\tmp", text=True)
-    with os.fdopen(fd, "w", newline="\n") as f:
+    serial = bytes.fromhex(c["serial_hex"]) if "serial_hex" in c else c["serial"].encode()
+    payload = c["name"].encode() + b"\n" + c["email"].encode() + b"\n" + serial + b"\n"
+    fd, infile = tempfile.mkstemp(prefix="s2in-", dir=r"D:\tmp")
+    with os.fdopen(fd, "wb") as f:
         f.write(payload)
     log = os.path.join(r"D:\tmp", "s2-%s.log" % c["case"])
     proc = subprocess.run(
@@ -48,7 +49,7 @@ for c in cases:
         "case": c["case"],
         "name": c["name"],
         "email": c["email"],
-        "serial": c["serial"],
+        "serial": serial.hex(),
         "exit_code": rc,
         "decision": decision,
         "stdout_body": body,

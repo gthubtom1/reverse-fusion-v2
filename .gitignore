@@ -6,3 +6,9 @@
 # 子模块内的依赖与构建产物不入库
 engine/rea/node_modules/
 engine/rea/dist/
+__pycache__/
+*.pyc
+
+# IDA 起停日志
+Hook.log
+IDAHook.log

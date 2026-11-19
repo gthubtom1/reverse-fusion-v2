@@ -1,0 +1,74 @@
+fusion_version: v2.1
+fusion_date: 2026-11-20
+goal: 白话 in Codex -> 分析软件 -> 重做功能一样的版本
+
+pinned:
+  rea:
+    repo: morluto/rea
+    version: 6.9.0
+    commit: 4491c84c82140a43fa12390b727840a433875ba8
+    used_as: engine_only
+    local_head_verified: true
+    local_head_verified_at: 2026-11-20
+  reverse-skill:
+    repo: gthubtom1/reverse-skill
+    version: 1.9.0
+    commit: ce675096e6a2cd4789a76f9bd618feddc2b6f333
+    used_as: router_and_reconstruction
+    local_head_verified: true
+    local_head_verified_at: 2026-11-20
+    note: 正式 tag v1.9.0 指向 7cc3109bf14a570c9c852dc76cce05fff424e88c；本项目仍锁 ce67509
+  seep:
+    repo: angusdevgo/Seep-Reverse-Lab
+    version: 1.15.0
+    commit: 1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e
+    used_as: specialist_extract_only
+    status: deferred
+    note: 本轮未签出、未安装、未抽取（以后再说）
+
+install:
+  rea:
+    installed: true
+    node_runtime: 24.22.1
+    ghidra: 12.2 (D:/Tools/Ghidra-12.2/ghidra_12.2_PUBLIC)
+    java: 25 (D:/Tools/jdk25)
+    mcp_tools: 260
+    mcp_status: connected
+  reverse-skill:
+    installed: true
+    modules_kept: 14
+    router_skill: true
+    locations: [.claude/skills, .agents/skills, .pi/skills]
+
+execution_order:
+  - reverse-skill
+  - rea
+  - seep-extract-if-hard-target
+  - reverse-skill-r46
+  - rea-compare-and-case-review
+
+install_order:
+  - rea
+  - reverse-skill
+  - seep-extract
+
+do_not_use:
+  - seep_mcp_server_as_main
+  - seep_lab_gate_standalone
+  - seep_upstream_duplicates
+  - reverse-skill_unrelated_modules
+  - ctf_sandbox_orchestrator
+  - pentest_tools_src_hunter
+
+stage_status:
+  stage_0: 历史结论为不通过；四条勘误已写入 v2.1
+  stage_1: 完成（签出、安装、工具列表、安装回执）
+  stage_2: 完成（REA MCP 接线、证据落盘、交接单模板）
+  stage_3: 样本 1 达到 L4；样本 2 达到本轮口径；样本 3 未执行
+  stage_4: 未开始
+
+known_limitations:
+  - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
+  - rea doctor 总体 healthy=false（hopper/ida/jadx/kuna 可选引擎未装）
+  - 两个样本都没有声明 L5
+  - 样本 2 的哈希用 Unicorn 模拟原版机器码，不是高级语言独立重写

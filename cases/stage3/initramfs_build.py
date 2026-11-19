@@ -57,6 +57,22 @@ for src_rel, name, mode in FILES:
         data = f.read()
     add(name, data, mode)
 
+# optional extra/ tree (paths preserved, directories created)
+extra_root = os.path.join(src, "extra")
+if os.path.isdir(extra_root):
+    for dirpath, dirnames, filenames in os.walk(extra_root):
+        rel_dir = os.path.relpath(dirpath, extra_root).replace("\\", "/")
+        parts = [] if rel_dir == "." else rel_dir.split("/")
+        acc = []
+        for part in parts:
+            acc.append(part)
+            add("/".join(acc), b"", 0o040755)
+        for fn in filenames:
+            full = os.path.join(dirpath, fn)
+            with open(full, "rb") as f:
+                data = f.read()
+            add("/".join(parts + [fn]), data, 0o100644)
+
 # trailer
 hdr = ("070701" + "".join("%08X" % v for v in [
     ino, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 11, 0]))

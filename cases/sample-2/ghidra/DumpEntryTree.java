@@ -40,7 +40,7 @@ public class DumpEntryTree extends GhidraScript {
         ifc.openProgram(currentProgram);
         mon = new ConsoleTaskMonitor();
 
-        Function entry = getFunctionAt(currentProgram.getEntryPoint());
+        Function entry = currentProgram.getFunctionManager().getFunctionAt(currentProgram.getEntryPoint());
         if (entry == null) {
             java.util.Iterator<Function> fit =
                 currentProgram.getFunctionManager().getFunctions(true).iterator();

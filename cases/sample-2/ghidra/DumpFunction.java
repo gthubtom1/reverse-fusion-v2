@@ -44,7 +44,7 @@ public class DumpFunction extends GhidraScript {
 
         Address addr = currentProgram.getAddressFactory()
             .getDefaultAddressSpace().getAddress(addrStr);
-        Function f = getFunctionContaining(addr);
+        Function f = currentProgram.getFunctionManager().getFunctionContaining(addr);
         out.println("TARGET " + addrStr + " -> " +
             (f == null ? "no function" : f.getName() + " @ " + f.getEntryPoint()));
         dump(f, depth);
