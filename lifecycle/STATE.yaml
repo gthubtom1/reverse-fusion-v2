@@ -1,17 +1,16 @@
-current_stage: R2
-current_domain: evidence-chain
-status: R2 完成（待提交）
+current_stage: R3
+current_domain: rea-verify
+status: R3 完成（待提交）
 done:
-  - "样本1: handoff-manifest.json (checker PASS, 11 文件) + EVIDENCE-MAP.md + E 号 md 包装 + CODEX-RECEIPT.md"
-  - "样本2: E 号拆分 (E-003a/b, E-004a/b/c, E-006a/b) + 清单 (checker PASS, 15 文件) + EVIDENCE-MAP.md"
-next_step: "R3：样本 1 真调一次 REA 验证链（export_evidence_bundle / compare_functions / build_reconstruction_obligation_ledger / verify_reconstruction / evaluate_reconstruction_coverage）"
+  - "样本1 REA 验证链真调：export_evidence_bundle 成功（E-010 导出含 2 ev_ 记录）；compare_functions 成功（main vs check，返回 ev_9e0b4ab3，E-012）；ledger/verify/coverage 三者工具存在但参数需店内构造，记录原因"
+next_step: "R4：修数字和安装——675/469 改对、重补 3 个旧修正（D11）、MANIFEST 改对、3 份安装拷贝刷新各记文件数、Seep 不装清单"
 blocked:
   - "无"
 open_items:
-  - "Codex 往返：无真实 Codex CLI，用 CODEX-RECEIPT 记录电脑智能体交付 + 如实标注未走真 Codex"
   - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-last_commit: "b8ccdcdb6e9f4da5a58f4e5602edff2f6b2d3c70"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/b8ccdcdb6e9f4da5a58f4e5602edff2f6b2d3c70"
+  - "ledger/verify/coverage 参数为店内构造对象，未拼接调用（如实）"
+last_commit: "81fc67e7c989339e62f3a07efd60745496565a71"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/81fc67e7c989339e62f3a07efd60745496565a71"
 evidence:
-  - "cases/sample-1/evidence/checker-PASS-s1.txt"
-  - "cases/sample-2/evidence/checker-PASS-s2.txt"
+  - "cases/sample-1/evidence/E-010-exported-bundle.json"
+  - "cases/sample-1/evidence/E-012-compare-real.json"
