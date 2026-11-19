@@ -52,4 +52,21 @@ python -I cases/sample-2/reimpl/verify_table.py D:/tmp/fusion-samples/s2/howo-no
 
 - 已做：v2.1 勘误；第 1–3 阶段（安装、接线、接线测试、样本 1 L4、样本 2 本轮口径）。
 - 未做：样本 3；第 4 阶段的「定版」与 lifecycle 的完整性走查（本轮补齐了 lifecycle 5 件套，定版号仍为 v2.1）。
+
+## v3 各领域怎么跑（Stage 11 汇总入口）
+
+前置：Node `D:/Tools/node-24.22.1/node-v24.22.1-win-x64/node.exe`（或把 node 加入 PATH 后直接 `node`）。所有样本均为自建学习目标（第三方样本下载网络不稳，如实记录）。
+
+| 领域 | 入口命令 | 案子路径 | 验收文件 |
+|---|---|---|---|
+| JS/网页算法 | `node cases/js-1/reimpl/differential_test.mjs` | `cases/js-1/` | `cases/js-1/ACCEPTANCE.md` |
+| APK（算法抽取） | `node cases/apk-1/reimpl/licensecheck.mjs`（validate）+ `node cases/apk-1/reimpl/comparator_check.mjs` | `cases/apk-1/` | `cases/apk-1/ACCEPTANCE.md` |
+| 浏览器扩展 | `node cases/ext-1/reimpl/extrepro.mjs`（tokenFor）+ `node cases/ext-1/reimpl/comparator_check.mjs` | `cases/ext-1/` | `cases/ext-1/ACCEPTANCE.md` |
+| 协议 | `cd cases/protocol-1 && node reimpl/decode.mjs`（decode 对照）；抓包：tshark loopback | `cases/protocol-1/` | `cases/protocol-1/ACCEPTANCE.md` |
+| 浏览器自动化（观察） | chrome-devtools 打开 `cases/js-1/target/index.html`（本地 8765 服务）→ 点击 → 录请求 | `cases/automation-1/` | `cases/automation-1/ACCEPTANCE.md` |
+| 验证码 | `node cases/captcha-1/reimpl/captcharepro.mjs`（token）+ `node cases/captcha-1/reimpl/comparator_check.mjs` | `cases/captcha-1/` | `cases/captcha-1/ACCEPTANCE.md` |
+
+「一个没看过方案的人照着跑」：每个领域先读其 `ACCEPTANCE.md`，再看 `reimpl/` 里的复现脚本，命令见上表；期望输出在验收文件里写明。
+
+声明：v3 各领域样本均为自建学习目标；模式以「算法抽取（模式 3）」为主，验收词用「通过 / 部分通过 / 不通过」。样本 1、2（crackmes）仍按 v2.1 的 L4/L5 口径。
 - 限制：样本 1/2 未声明 L5；Seep 未参与（以后再说）。

@@ -1,17 +1,17 @@
-current_stage: 11
-current_domain: aggregation
+current_stage: 12
+current_domain: final
 status: 进行中
 done:
-  - "Stage 5A-10 全部完成：5A(恢复)、5 JS通过、6 APK部分、7 扩展通过、8 协议通过、9 自动化通过、10 验证码通过"
-next_step: "Stage 11：汇总——README 加『各领域怎么跑』、每领域 5 用例重跑（回归）、写 cases/aggregation/REGRESSION.md"
+  - "Stage 5A-11 全部完成（含汇总与回归）"
+next_step: "Stage 12：收尾冻结——对照 v3 完成标准（v2.1 §9 十条 + 6 条新增）逐项打勾，写 cases/final/GAPS.md 与 V3-REPORT.md，MANIFEST fusion_version 定 v3"
 blocked:
   - "无"
 open_items:
   - "jshookmcp 未装（以后再说）"
   - "APK d8 崩未成 dex（以后再说）"
-  - "Stage 6 是部分通过（唯一非通过项）"
+  - "Stage 6 为部分通过（唯一非通过项）"
   - "第三方样本下载网络不稳，样本自建"
-last_commit: "31c5ab5a8a95a1f05934e33ddee74442f4ab4239"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/31c5ab5a8a95a1f05934e33ddee74442f4ab4239"
+last_commit: "3fb51ee42e2949aad4cde4c07aa5f224aee157a0"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/3fb51ee42e2949aad4cde4c07aa5f224aee157a0"
 evidence:
-  - "cases/captcha-1/ACCEPTANCE.md（Stage 10 通过）"
+  - "cases/aggregation/REGRESSION.md（Stage 11）"

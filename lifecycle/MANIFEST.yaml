@@ -99,6 +99,10 @@ stage_status:
     status: 通过
     date: 2026-11-20
     what: 验证码算法抽取——前置门过（Stage 5-9 无不通过）、上游方法存在（dsl-vm-captcha 笔记）；自建算术验证码 token 算法 Node 复现 5 用例双侧全对、比较器自检通过（只用自己的测试验证码）
+  stage_11:
+    status: 完成
+    date: 2026-11-20
+    what: 汇总——README 加『各领域怎么跑』入口表；各领域重跑 5 用例（JS/ext/captcha/apk 实跑，protocol/automation 引用证据）→ 无回归失败，cases/aggregation/REGRESSION.md 记录
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
