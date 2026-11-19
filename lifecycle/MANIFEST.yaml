@@ -79,6 +79,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: JS/网页算法（模式 3 算法抽取）通过——两个自托管测试页 sig1（简单）+sig2（中等）各 5 用例双侧对照全过、独立运行、比较器自检（防背答案）通过；js-reverse_*/jshookmcp 未装，用 Node 本地复现 + chrome-devtools 备用梯
+  stage_6:
+    status: 部分通过
+    date: 2026-11-20
+    what: APK 算法抽取——jadx 定位 license 校验、Node 复现 5 用例与 JVM 原版双侧全对、比较器自检通过；但 d8 工具在 JDK21/25 下崩溃，未做成 dex/APK、模拟器 UI 未实测（卡点记开放事项）。样本为自建学习目标（第三方 APK 下载网络不稳）
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

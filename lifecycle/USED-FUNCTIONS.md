@@ -28,6 +28,12 @@
 | `skills/reconstruction/scripts/check_handoff.py` | 机械检查 | 机器核对交接单 | 是 | 是（自带示例跑过，结果 FAIL 因示例引用文件缺失） |
 | `skills/reconstruction/examples/synthetic-project` | 示例案子 | 参考格式 | 是 | 是（check_handoff 用其运行） |
 | `skills/js-reverse` | Rebuild / js-reverse 方法流 | JS 签名本地复现 | 是 | 是（Stage 5：Node 本地复现 + chrome-devtools 观察浏览器，未用 js-reverse_* MCP） |
+| reverse-skill `skills/apk-reverse`, `mobile-reverse` | jadx / apktool 方法流 | APK 解包、找关键算法 | 是 | 是（Stage 6：jadx 1.5.6 反编译 + Node 复现；apktool 未实际执行解包） |
+| （工具）jadx | cli 反编译 | 反编译 class/APK | — | 是（jadx --version 1.5.6；反编译 MainActivity.class） |
+| （工具）apktool | cli | APK 解包/重打包 | — | 是（--version 3.0.3；本阶段未实际解包） |
+| （工具）adb / Android SDK | adb, emulator | 模拟器与设备 | — | 是（android-29 模拟器启动，adb devices device） |
+| （工具）frida | frida-server / CLI | 动态 hook | — | 是（--version 17.17.0；本阶段未实际 hook） |
+| （工具）d8 (R8) | dex 编译 | class→dex | — | 不适用（d8 8.2.2 在两个 JDK 下崩溃，本机未成 dex） |
 | `skills/case-review` | 只读审查 | 核对证据链与哈希 | 是 | 本机未调用 |
 | `skills/docs-generator` | 报告模板 | 生成报告 | 是 | 是（用于 ACKNOWLEDGE 类标注的验收/交接单文档） |
 

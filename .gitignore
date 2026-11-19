@@ -12,3 +12,7 @@ __pycache__/
 # IDA 起停日志
 Hook.log
 IDAHook.log
+
+# apk 构建中间产物
+cases/apk-1/src/build/obj/
+cases/apk-1/src/build/pkg/

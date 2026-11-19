@@ -1,17 +1,19 @@
-current_stage: 6
-current_domain: apk-1
+current_stage: 7
+current_domain: ext-1
 status: 进行中
 done:
   - "Stage 5A 完成：reverse-skill 完整版已恢复"
-  - "Stage 5 完成：JS 算法抽取通过（sig1+sig2 各 5 用例双侧对照全过；比较器自检通过；Node 独立复现）"
-next_step: "Stage 6：APK——先装并核实 jadx/apktool/adb/frida 工具链；找 1 简单 + 1 中等公开学习 APK，登记来源和 SHA-256；按 js 流程做 5 用例对照"
+  - "Stage 5 完成：JS 算法抽取通过（sig1+sig2 各 5 用例双侧对照全过）"
+  - "Stage 6 完成部分通过：APK 算法抽取——jadx 定位 license 校验、Node 复现 5 用例与 JVM 原版双侧全对、比较器自检通过；d8 工具受阻未做成 APK、UI 未实测"
+next_step: "Stage 7：浏览器扩展——找一个公开测试扩展（crx/xpi）或用自建扩展走通解包、分析 JS、复现关键逻辑、5 用例对照"
 blocked:
   - "无"
 open_items:
   - "jshookmcp 注册方式未核实（以后再说）"
-  - "jadx/apktool/adb/frida 是否已装未核实——Stage 6 第一步核实"
+  - "APK：d8 工具崩溃未做成 dex，需换 Gradle/可用的 dex 工具后再真机装"
+  - "第三方 APK 下载网络不稳，Stage 6 用自建样本"
   - "core 675 vs v3 说的 671、上游 676，数字差异原因未核实"
-last_commit: "e4ec16baea4a8f19be9abcbf5f05963f9135e802"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/e4ec16baea4a8f19be9abcbf5f05963f9135e802"
+last_commit: "fe6cc8c2cbd587dd9941c64c5d3991f3cf2af885"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/fe6cc8c2cbd587dd9941c64c5d3991f3cf2af885"
 evidence:
-  - "cases/js-1/ACCEPTANCE.md（Stage 5）"
+  - "cases/apk-1/ACCEPTANCE.md（Stage 6，部分通过）"

@@ -1,0 +1,2 @@
+0a491e5824b67fa0725d1c93a922aa996fae8992d3726f41fd6c441f8a1d57b2 *cases/apk-1/target/MainActivity.class
+e8c01548c0c9d96d8c536ddeefbecfaed5540d5fc9847c335ac54df4751c0df3 *cases/apk-1/src/app/src/main/java/com/example/licdemo/MainActivity.java

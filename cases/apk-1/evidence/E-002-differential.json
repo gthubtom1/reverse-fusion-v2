@@ -1,0 +1,34 @@
+{
+  "stage": "apk-1",
+  "date": "2026-11-20",
+  "sample": "com.example.licdemo (self-built learning target)",
+  "mode": "algorithm extraction (mode 3)",
+  "note": "original 用 JVM 直接跑 MainActivity.class（jadx 反编译同源 class 作为可复现原版语义）；未做成 dex/APK（d8 在 JDK21/25 下均崩，记录为工具受阻，走 class 级对照）",
+  "toolchain": {
+    "jadx": "1.5.6",
+    "apktool": "3.0.3",
+    "adb": "1.0.41",
+    "aapt": "build-tools 34.0.0",
+    "frida": "17.17.0",
+    "emulator": "android-29 boot_ok"
+  },
+  "original_outputs": {
+    "FUSION-2026-Xs": true,
+    "FUSION-2026-é": false,
+    "abc": false,
+    "FUSION-2026-OO": false,
+    "XXXXX": false
+  },
+  "repro_outputs": {
+    "FUSION-2026-Xs": true,
+    "FUSION-2026-é": false,
+    "abc": false,
+    "FUSION-2026-OO": false,
+    "XXXXX": false
+  },
+  "all_match": true,
+  "comparator": {
+    "ok": true,
+    "note": "改 0xD0->0xD1 后合法序列号变 false（防背答案）"
+  }
+}
