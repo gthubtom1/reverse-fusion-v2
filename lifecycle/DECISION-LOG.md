@@ -50,6 +50,13 @@
 - 理由：v2.1 §5.4 明确抓坏变体不等于 L5；两边都没有复刻控制台等副作用面。
 - 证据：`cases/sample-1/ACCEPTANCE.md`、`cases/sample-2/ACCEPTANCE.md`。
 
+### D10 把 reverse-skill 恢复成完整版（v3 §1.3 / §4.1 的冻结决定）
+- 决定：v2.1 §4 的瘦身作废，把锁定提交 `ce67509…` 的整个 reverse-skill 复制回 `core/`，覆盖瘦身后的 208 个文件。
+- 理由：Davis 2026-11-20 纠正——v2.1 的瘦身是 Muse 自作主张，Davis 从来没让瘦身；reverse-skill 是当全领域手册建的，瘦身砍掉了以后能做 APK/扩展/协议/验证码的模块，还断掉了 9 个技能对 `field-journal/precedent-reverse.md` 的引用。
+- 办法：不用删领域来避免路由打架，改用 v3 §3.3 的三条：reverse-skill 唯一总控、REA 只当 MCP 工具、Seep 不当总控。
+- 实测：core 恢复后 675 个文件（上游 676，只差 `.git/`）；`field-journal/precedent-reverse.md` 已存在，18 个技能文件引用全部能解析；REA 子模块 5 个技能无 reverse-skill 式路由（无 master-route/case-init）。
+- 证据：`lifecycle/MANIFEST.yaml`（stage_5a）、命令 `diff -rq core upstream/reverse-skill`、`test -f core/skills/field-journal/precedent-reverse.md`。
+
 ## 未来待办（卡点，未解决）
 
 - 样本 3 未执行；第 4 阶段之后才做。

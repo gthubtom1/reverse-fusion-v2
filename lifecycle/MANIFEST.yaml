@@ -1,6 +1,6 @@
-fusion_version: v2.1
+fusion_version: v3
 fusion_date: 2026-11-20
-goal: 白话 in Codex -> 分析软件 -> 重做功能一样的版本
+goal: 白话 in Codex -> 分析软件 -> 重做功能一样的版本（扩展到全领域）
 
 pinned:
   rea:
@@ -36,8 +36,10 @@ install:
     mcp_status: connected
   reverse-skill:
     installed: true
-    modules_kept: 14
-    router_skill: true
+    modules_kept: 完整版已恢复（671 个文件，提交 ce67509…，核对日期 2026-11-20）
+    restored_complete: true
+    restored_final_count: 675
+    upstream_count: 676
     locations: [.claude/skills, .agents/skills, .pi/skills]
 
 execution_order:
@@ -69,9 +71,15 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: lifecycle 五件套齐全（USED-FUNCTIONS.md、DECISION-LOG.md D1-D9、UPDATE-CHECK.md、UPDATE-REPORT-TEMPLATE.md），README 重写为前置+复现命令；定版仍为 v2.1
+  stage_5a:
+    status: 完成
+    date: 2026-11-20
+    what: reverse-skill 完整版已恢复（core 复刻锁定提交，675 个文件，与上游只差 .git）；field-journal/precedent-reverse.md 存在，18 个技能引用未断；REA 子模块无抢路由技能
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
   - rea doctor 总体 healthy=false（hopper/ida/jadx/kuna 可选引擎未装）
   - 两个样本都没有声明 L5
   - 样本 2 的哈希用 Unicorn 模拟原版机器码，不是高级语言独立重写
+  - v2.1 的“45 个技能”数不对（实测 44 个顶层技能目录，原因未核实）；恢复后 core 675 文件、上游 676 文件（差 .git），与 v3 的 671/463 标注有出入，原因未核实（可能统计口径不同）
+  - js-reverse_* MCP 工具、jshookmcp、jadx、apktool、frida、adb 是否已装未见核（v3 §13.3）

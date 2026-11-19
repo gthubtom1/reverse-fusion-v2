@@ -233,7 +233,7 @@ git clone https://github.com/gthubtom1/reverse-skill.git
 ### 修改后验证
 
 ```powershell
-# 路由回归（192 条）
+# 路由回归（175 条）
 powershell -NoProfile -ExecutionPolicy Bypass -File skills/scripts/test-routing.ps1
 # 结构一致性 + 供应链版本固定门禁
 powershell -NoProfile -ExecutionPolicy Bypass -File skills/scripts/verify-routing-coherence.ps1
