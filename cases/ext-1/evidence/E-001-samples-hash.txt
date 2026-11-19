@@ -1,0 +1,2 @@
+938987916fa7539e6d6812ae1ebadd61ecf168c337d30fd331ffb09a316ce362 *cases/ext-1/target/manifest.json
+6c7a5e1a9b40ca4ef6f7ea34d24de9addcee9cb574eb0d76239d291ddcfb60f0 *cases/ext-1/target/background.js

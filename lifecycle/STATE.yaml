@@ -1,19 +1,21 @@
-current_stage: 7
-current_domain: ext-1
+current_stage: 8
+current_domain: protocol-1
 status: 进行中
 done:
   - "Stage 5A 完成：reverse-skill 完整版已恢复"
-  - "Stage 5 完成：JS 算法抽取通过（sig1+sig2 各 5 用例双侧对照全过）"
-  - "Stage 6 完成部分通过：APK 算法抽取——jadx 定位 license 校验、Node 复现 5 用例与 JVM 原版双侧全对、比较器自检通过；d8 工具受阻未做成 APK、UI 未实测"
-next_step: "Stage 7：浏览器扩展——找一个公开测试扩展（crx/xpi）或用自建扩展走通解包、分析 JS、复现关键逻辑、5 用例对照"
+  - "Stage 5 完成：JS 算法抽取通过"
+  - "Stage 6 部分通过：APK 算法抽取（jadx 定位、Node 复现 5 用例双侧全对；d8 崩未成 APK）"
+  - "Stage 7 通过：浏览器扩展算法抽取（MV3 tokenFor，5 用例双侧全对，比较器自检过）"
+next_step: "Stage 8：协议——核实抓包工具 tshark/Wireshark；建一个自定义协议测试服务，抓包、还原字段、写 decode 脚本、5 报文双侧对照"
 blocked:
   - "无"
 open_items:
-  - "jshookmcp 注册方式未核实（以后再说）"
-  - "APK：d8 工具崩溃未做成 dex，需换 Gradle/可用的 dex 工具后再真机装"
-  - "第三方 APK 下载网络不稳，Stage 6 用自建样本"
-  - "core 675 vs v3 说的 671、上游 676，数字差异原因未核实"
-last_commit: "fe6cc8c2cbd587dd9941c64c5d3991f3cf2af885"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/fe6cc8c2cbd587dd9941c64c5d3991f3cf2af885"
+  - "jshookmcp 未装/未注册（以后再说）"
+  - "APK：d8 崩溃，需换工具再真机装"
+  - "第三方 APK/扩展下载网络不稳，样本均用自建"
+  - "Stage 8 的 tshark/Wireshark 是否已装未核实"
+  - "core 675 vs v3 671、上游 676，数字差异原因未核实"
+last_commit: "45228f75da823411097ab2d550d2a3a3183d184b"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/45228f75da823411097ab2d550d2a3a3183d184b"
 evidence:
-  - "cases/apk-1/ACCEPTANCE.md（Stage 6，部分通过）"
+  - "cases/ext-1/ACCEPTANCE.md（Stage 7 通过）"

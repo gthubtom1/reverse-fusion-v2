@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Token Lab ext",
+  "version": "1.0.0",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": { "default_title": "Token Lab" }
+}

@@ -1,0 +1,19 @@
+{
+  "stage": "ext-1",
+  "date": "2026-11-20",
+  "sample": "自建 MV3 浏览器扩展（manifest.json + background.js）的 token 签名算法",
+  "mode": "algorithm extraction (mode 3)",
+  "manifest_version": 3,
+  "original": "browser (chrome-devtools page) 内 fetch+eval 原 background.js 的 tokenFor(); 5 用例",
+  "original_outputs": {
+    "https://example.com/x": "644caad34542ba9011a983cb8a85888dd1c5e612ac232e",
+    "chrome://settings/": "723c9a228695309038f1c3e88b079ea851c11822",
+    "https://a.b/c?q=1": "644caad34542ba90011bb3834e2ca0c14373ef",
+    "": "0000",
+    "https://example.com/very/long/path/component": "644caad34542ba9011a983cb8a85888dd1c5e612ab50ac52576193917c705160aa493ba0d4501544cd2b684c09a1"
+  },
+  "repro_outputs": { "match": "all 5 identical to original (see differential run)" },
+  "all_match": true,
+  "comparator": { "ok": true, "note": "改 SECRET 最后一字节 0x33->0x44 后 4 个非空 URL token 全部变化；空串恒定 0000 为算法语义（无输入字节）" },
+  "key_algorithm": "每字节 rotl8(byte^SECRET[i%6], (i%7)+1)，累加 acc；末尾补 rotl8(acc,3) 与 rotl8(acc^len,5)，全 hex。SECRET='Zg!MY3'"
+}

@@ -83,6 +83,10 @@ stage_status:
     status: 部分通过
     date: 2026-11-20
     what: APK 算法抽取——jadx 定位 license 校验、Node 复现 5 用例与 JVM 原版双侧全对、比较器自检通过；但 d8 工具在 JDK21/25 下崩溃，未做成 dex/APK、模拟器 UI 未实测（卡点记开放事项）。样本为自建学习目标（第三方 APK 下载网络不稳）
+  stage_7:
+    status: 通过
+    date: 2026-11-20
+    what: 浏览器扩展算法抽取——自建 MV3 扩展（manifest+background.js tokenFor）解包定位、Node 复现 5 用例与浏览器原版双侧全对、比较器自检（改 SECRET）通过；扩展未真加载进 chrome（自动化 GUI 限制）
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

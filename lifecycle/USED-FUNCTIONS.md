@@ -34,6 +34,7 @@
 | （工具）adb / Android SDK | adb, emulator | 模拟器与设备 | — | 是（android-29 模拟器启动，adb devices device） |
 | （工具）frida | frida-server / CLI | 动态 hook | — | 是（--version 17.17.0；本阶段未实际 hook） |
 | （工具）d8 (R8) | dex 编译 | class→dex | — | 不适用（d8 8.2.2 在两个 JDK 下崩溃，本机未成 dex） |
+| reverse-skill `skills/browser-extension-reverse` | 解包→manifest→background | 扩展逻辑定位 | 是 | 是（Stage 7：读 manifest、定位 service_worker tokenFor、浏览器上下文跑原版） |
 | `skills/case-review` | 只读审查 | 核对证据链与哈希 | 是 | 本机未调用 |
 | `skills/docs-generator` | 报告模板 | 生成报告 | 是 | 是（用于 ACKNOWLEDGE 类标注的验收/交接单文档） |
 
