@@ -63,3 +63,8 @@
 - Seep 的抽取与运行未开始。
 - `check_handoff.py` 没有为本轮交接单生成 JSON 指针清单（需要 `handoff-manifest.json`）。
 - REA 的可选引擎（hopper/ida/jadx/kuna）未装，`doctor` 总体系 healthy=false。
+### D11 重补被恢复覆盖的 3 个旧修正 + 数字定为 675/675（v3.1 R4）
+- 决定：`core/README_zh.md:236` 重新写 192 条、`core/skills/routing_zh.md:261` 重新写 78 工具、`core/docs/RELEASE-CHECKLIST.md:16` 重新写 26 项（Stage 1 曾改对，Stage 5A 恢复时被上游原值覆盖）。
+- 数字：reverse-skill 上游 675 / core 675 / 恢复清单 469（v3 逐个数，`.git` 不算 tracked）；三份安装拷贝各 702。
+- 理由：v3.1 §4（审计 §3 指出 v3 的 671/463 写错）。
+- 证据：`sed` 命令见 R4；MANIFEST `upstream_count: 675`、`skill_install_counts`。

@@ -25,6 +25,7 @@ pinned:
     used_as: specialist_extract_only
     status: deferred
     note: 本轮未签出、未安装、未抽取（以后再说）
+    not_installed_check: "未签出/未安装/未抽取（R4 检查）；无 MCP 注册、无 softseep/SYSTEM.md/Lab Gate 加载；Track B 才执行"
 
 install:
   rea:
@@ -36,11 +37,12 @@ install:
     mcp_status: connected
   reverse-skill:
     installed: true
-    modules_kept: 完整版已恢复（675 个文件；新克隆需 `git ls-files | wc -l` 比对，不写死，v3.1 §4.1）
+    modules_kept: 675
     restored_complete: true
     restored_final_count: 675
     upstream_count: 675
     locations: [.claude/skills, .agents/skills, .pi/skills]
+    skill_install_counts: {".claude/skills": 702, ".agents/skills": 702, ".pi/skills": 702, "checked_at": "2026-11-20"}
     rea_skill_check: "找到 0 个 REA 技能文件混入三宿主技能目录（.claude/.agents/.pi 只有 reverse-skill-router + reconstruction）；engine/rea 下无会被宿主加载的 SKILL.md（C5，2026-11-20）"
     tool_index_generated: true
     tool_index_note: "core/skills/tool-index.md 由 refresh-tool-index.sh 生成（2026-11-20，5.8KB），详见 R1（C10）"
@@ -61,9 +63,6 @@ do_not_use:
   - seep_mcp_server_as_main
   - seep_lab_gate_standalone
   - seep_upstream_duplicates
-  - reverse-skill_unrelated_modules
-  - ctf_sandbox_orchestrator
-  - pentest_tools_src_hunter
 
 stage_status:
   stage_0: 历史结论为不通过；四条勘误已写入 v2.1
@@ -122,6 +121,14 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: 接证据链——样本 1/2 各补 notes/handoff-manifest.json（检查器均 PASS：s1 11 文件、s2 15 文件）+ EVIDENCE-MAP.md + E 号单文件包装 md；样本 2 E 号拆分（E-003a/b、E-004a/b/c、E-006a/b）；样本 1 写 CODEX-RECEIPT（如实标注无真实 Codex CLI，未冒充真往返）
+  R3:
+    status: 完成
+    date: 2026-11-20
+    what: 样本 1 REA 验证链真调——export_evidence_bundle 成功（E-010 导出含 2 ev_ 记录）、compare_functions 成功（main vs check→ev_9e0b4ab3，E-012）；ledger/verify/coverage 参数需会话内构造，记录原因
+  R4:
+    status: 完成
+    date: 2026-11-20
+    what: 修数字和安装——3 个旧修正重补（D11）；MANIFEST modules_kept=675/upstream_count=675/do_not_use 删三项；Seep 不装清单；三份安装拷贝各 702 文件
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

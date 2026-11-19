@@ -1,16 +1,18 @@
-current_stage: R3
-current_domain: rea-verify
-status: R3 完成（待提交）
+current_stage: R4
+current_domain: numbers-install
+status: R4 完成（待提交）
 done:
-  - "样本1 REA 验证链真调：export_evidence_bundle 成功（E-010 导出含 2 ev_ 记录）；compare_functions 成功（main vs check，返回 ev_9e0b4ab3，E-012）；ledger/verify/coverage 三者工具存在但参数需店内构造，记录原因"
-next_step: "R4：修数字和安装——675/469 改对、重补 3 个旧修正（D11）、MANIFEST 改对、3 份安装拷贝刷新各记文件数、Seep 不装清单"
+  - "3 个旧修正重补（README_zh 192条/routing_zh 78工具/RELEASE-CHECKLIST 26项），DECISION-LOG D11 记录"
+  - "MANIFEST 数字改对：modules_kept=675、upstream_count=675、do_not_use 删掉 reverse-skill_unrelated_modules/ctf_sandbox_orchestrator/pentest_tools_src_hunter"
+  - "Seep 不装检查清单写进 MANIFEST not_installed_check"
+  - "三份安装拷贝刷新并各记文件数：.claude=702 / .agents=702 / .pi=702"
+next_step: "R5：补领域——新 Stage 13 Windows+.NET+厚客户端、14 Go/Rust、15 恶意软件门+领域、16 固件(可推迟)；macOS/iOS 写理由；19 个范围外写进领域表"
 blocked:
   - "无"
 open_items:
   - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-  - "ledger/verify/coverage 参数为店内构造对象，未拼接调用（如实）"
-last_commit: "81fc67e7c989339e62f3a07efd60745496565a71"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/81fc67e7c989339e62f3a07efd60745496565a71"
+last_commit: "510afc4e82f1994ddbbe378761ac0504bcd3f11f"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/510afc4e82f1994ddbbe378761ac0504bcd3f11f"
 evidence:
-  - "cases/sample-1/evidence/E-010-exported-bundle.json"
-  - "cases/sample-1/evidence/E-012-compare-real.json"
+  - "lifecycle/MANIFEST.yaml（upstream_count=675、skill_install_counts）"
+  - "lifecycle/DECISION-LOG.md（D11）"
