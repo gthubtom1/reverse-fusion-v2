@@ -1,0 +1,48 @@
+{
+  "assessment_scope": "machine_check_only",
+  "status": "PASS",
+  "semantic_verification": "not_performed",
+  "target_execution": "not_performed",
+  "authorization": "not_assessed",
+  "issues": [],
+  "checked_files": [
+    "cases/sample-2/evidence/E-002-overview.json",
+    "cases/sample-2/evidence/E-004-gdb-dump.txt",
+    "cases/sample-2/evidence/E-004a.md",
+    "cases/sample-2/evidence/E-005-five-cases.json",
+    "cases/sample-2/evidence/E-005.md",
+    "cases/sample-2/evidence/E-006-table-verify-alice.txt",
+    "cases/sample-2/evidence/E-006a.md",
+    "cases/sample-2/notes/obligations.json",
+    "cases/sample-2/notes/unknowns.json",
+    "cases/sample-2/scope.md",
+    "cases/sample-2/timeline.md",
+    "cases/sample-2/workitems.md",
+    "specs/001-keygen-v1/plan.md",
+    "specs/001-keygen-v1/spec.md",
+    "specs/001-keygen-v1/tasks.md"
+  ],
+  "semantic_review_required": [
+    {
+      "fr_id": "FR-001",
+      "source_kind": "observed",
+      "required": "Review evidence support, unknown completeness, authority and current applicability"
+    },
+    {
+      "fr_id": "FR-002",
+      "source_kind": "inferred",
+      "required": "Review evidence support, unknown completeness, authority and current applicability"
+    },
+    {
+      "fr_id": "FR-003",
+      "source_kind": "observed",
+      "required": "Review evidence support, unknown completeness, authority and current applicability"
+    }
+  ],
+  "limitations": [
+    "SHA-256 checks fixity against supplied commitments, not authenticity or freshness of the selected version.",
+    "Source classifications and unknown lists require independent review; omitted or misclassified unknowns are not discovered.",
+    "No REA schema validation, Evidence authentication, proof applicability or semantic closure is performed.",
+    "PASS permits only mechanical handoff review; it does not authorize ACT or establish implementation readiness."
+  ]
+}

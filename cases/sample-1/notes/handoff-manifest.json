@@ -1,0 +1,130 @@
+{
+  "manifest_version": 1,
+  "case_root": "cases/sample-1",
+  "context_refs": {
+    "scope": {
+      "path": "cases/sample-1/scope.md",
+      "sha256": "3d5f23dd59193b6024451863545062ba2cd3c2ace23c9d28e9509126e4357cb8"
+    },
+    "timeline": {
+      "path": "cases/sample-1/timeline.md",
+      "sha256": "51e0c0a305731c14e9664f4a3058fd0c395ff66089a8a2a08b880bc5fefa9526"
+    },
+    "workitems": {
+      "path": "cases/sample-1/workitems.md",
+      "sha256": "2c0a343714a9897a611b19e617a0b049742876f87054d8dd7c50657a112a4fce"
+    }
+  },
+  "feature_refs": {
+    "spec": {
+      "path": "specs/001-xor-v1/spec.md",
+      "sha256": "9e559f92cccc990c1ebdbd7690a4a6c1253254c9d81b059e89f89a6989fe1478"
+    },
+    "plan": {
+      "path": "specs/001-xor-v1/plan.md",
+      "sha256": "ab873afeacaf6c2058708da92f560da5f3fbf1adfbe2416b50d0677b62d708f0"
+    },
+    "tasks": {
+      "path": "specs/001-xor-v1/tasks.md",
+      "sha256": "2f3ed1cd8616b65b4b5128e328cf79ddc023e283441dc617b8dc3350b2997d89"
+    }
+  },
+  "bundle_refs": [
+    {
+      "path": "cases/sample-1/evidence/E-REA-COMPLETE.json",
+      "sha256": "5fa64756a254b77d690b6b95252d23e7d933d08099616b4d5b270c0fc39584ac"
+    }
+  ],
+  "requirements": [
+    {
+      "fr_id": "FR-001",
+      "source_kind": "observed",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-005",
+          "record_ref": {
+            "path": "cases/sample-1/evidence/E-005.md",
+            "sha256": "fa4631ca36c2792df091c44c1d5f602f91161d94917047ddf92ca0570829fbbd"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-1/notes/obligations.json",
+          "sha256": "74e0b40e65c7d52c720bccadb90e7ff01b437bb53b213c23a635b3bc5f56ffa7"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-1/notes/unknowns.json",
+            "sha256": "f20b21b6aba280c3ab06c9df4b373b9c0a629354b24170f31ca814f97555fa62"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    },
+    {
+      "fr_id": "FR-002",
+      "source_kind": "observed",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-005",
+          "record_ref": {
+            "path": "cases/sample-1/evidence/E-005.md",
+            "sha256": "fa4631ca36c2792df091c44c1d5f602f91161d94917047ddf92ca0570829fbbd"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-1/notes/obligations.json",
+          "sha256": "74e0b40e65c7d52c720bccadb90e7ff01b437bb53b213c23a635b3bc5f56ffa7"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-1/notes/unknowns.json",
+            "sha256": "f20b21b6aba280c3ab06c9df4b373b9c0a629354b24170f31ca814f97555fa62"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    },
+    {
+      "fr_id": "FR-003",
+      "source_kind": "observed",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-005",
+          "record_ref": {
+            "path": "cases/sample-1/evidence/E-005.md",
+            "sha256": "fa4631ca36c2792df091c44c1d5f602f91161d94917047ddf92ca0570829fbbd"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-1/notes/obligations.json",
+          "sha256": "74e0b40e65c7d52c720bccadb90e7ff01b437bb53b213c23a635b3bc5f56ffa7"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-1/notes/unknowns.json",
+            "sha256": "f20b21b6aba280c3ab06c9df4b373b9c0a629354b24170f31ca814f97555fa62"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    }
+  ]
+}

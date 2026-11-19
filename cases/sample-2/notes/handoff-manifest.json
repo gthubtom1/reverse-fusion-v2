@@ -1,0 +1,137 @@
+{
+  "manifest_version": 1,
+  "case_root": "cases/sample-2",
+  "context_refs": {
+    "scope": {
+      "path": "cases/sample-2/scope.md",
+      "sha256": "623a752c571521013bbf62c9de41237ca459869ee8cf9800f54f86d011b91d4f"
+    },
+    "timeline": {
+      "path": "cases/sample-2/timeline.md",
+      "sha256": "1b75b40dc35bd01fcdf900998002608b5a8063a5c5bb2bb081eafad0dc6bd1dd"
+    },
+    "workitems": {
+      "path": "cases/sample-2/workitems.md",
+      "sha256": "be638c4c071d81d1e6732e7acea2e63be179206c213d51bf22e688cf13bd6963"
+    }
+  },
+  "feature_refs": {
+    "spec": {
+      "path": "specs/001-keygen-v1/spec.md",
+      "sha256": "7932eda6bfbab39d7f49b512e6b366a08f3f78333aec19c073705099c511fdec"
+    },
+    "plan": {
+      "path": "specs/001-keygen-v1/plan.md",
+      "sha256": "4e4e8ad9091e29422a487dde4674a017c8dc154c822577934d23e8ca611d5b87"
+    },
+    "tasks": {
+      "path": "specs/001-keygen-v1/tasks.md",
+      "sha256": "ccd537fe9873da005e5ff719e55f9c715b7ed133097734629c7c429c2a2a435b"
+    }
+  },
+  "bundle_refs": [
+    {
+      "path": "cases/sample-2/evidence/E-002-overview.json",
+      "sha256": "3ee94ddaafcab4e0ed653fe5390f712e31a445ca48cd4a5b99248af65ef93e06"
+    }
+  ],
+  "requirements": [
+    {
+      "fr_id": "FR-001",
+      "source_kind": "observed",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-005",
+          "record_ref": {
+            "path": "cases/sample-2/evidence/E-005.md",
+            "sha256": "f9c4032f9cae5f882baeeb347c83ec71466a93c4e3be2a23056158e4cafb975b"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-2/notes/obligations.json",
+          "sha256": "52100c070bb8dbc8a3713634878f721cdba0bc5da2706c05f688e469a2e46426"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-2/notes/unknowns.json",
+            "sha256": "ee8be77503035b033fd9765fcb33477c66a53cb4f2807409f15627e33acf8489"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    },
+    {
+      "fr_id": "FR-002",
+      "source_kind": "inferred",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-004a",
+          "record_ref": {
+            "path": "cases/sample-2/evidence/E-004a.md",
+            "sha256": "5fa3906ae604a4df5d36c2f1080c05bb715081cdb6a9a31d986f8b5c6d20a7f8"
+          }
+        },
+        {
+          "evidence_id": "E-006a",
+          "record_ref": {
+            "path": "cases/sample-2/evidence/E-006a.md",
+            "sha256": "8c18f5811295dae1cd1476d8ce86d538f7a0a7ae5452f68d51416760525f6e8d"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-2/notes/obligations.json",
+          "sha256": "52100c070bb8dbc8a3713634878f721cdba0bc5da2706c05f688e469a2e46426"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-2/notes/unknowns.json",
+            "sha256": "ee8be77503035b033fd9765fcb33477c66a53cb4f2807409f15627e33acf8489"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    },
+    {
+      "fr_id": "FR-003",
+      "source_kind": "observed",
+      "evidence_refs": [
+        {
+          "evidence_id": "E-005",
+          "record_ref": {
+            "path": "cases/sample-2/evidence/E-005.md",
+            "sha256": "f9c4032f9cae5f882baeeb347c83ec71466a93c4e3be2a23056158e4cafb975b"
+          }
+        }
+      ],
+      "obligation_ref": {
+        "document_ref": {
+          "path": "cases/sample-2/notes/obligations.json",
+          "sha256": "52100c070bb8dbc8a3713634878f721cdba0bc5da2706c05f688e469a2e46426"
+        },
+        "pointer": "/obligations/0"
+      },
+      "unknown_refs": [
+        {
+          "document_ref": {
+            "path": "cases/sample-2/notes/unknowns.json",
+            "sha256": "ee8be77503035b033fd9765fcb33477c66a53cb4f2807409f15627e33acf8489"
+          },
+          "pointer": "/unknowns/0",
+          "critical": false
+        }
+      ]
+    }
+  ]
+}

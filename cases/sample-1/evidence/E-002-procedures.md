@@ -1,0 +1,12 @@
+# E-002-procedures 证据记录
+
+## 基本信息
+- **E 号**: E-002-procedures
+- **对应 REA ev_ 号**: ev_e4bd46c88af56ab734e2c053dbac0f4f17875514d804a4b0de24a1c48969e0bb
+- **时间**: 2026-11-20
+- **artifact_path**: evidence/E-002-procedures.json
+- **content_hash**: 536fea5593833fb13fb0a00e904d2c3fc5e8c1396ec36c0ddea8005b9b36db49
+
+### E-002-procedures
+- artifact_path: evidence/E-002-procedures.json
+- content_hash: 536fea5593833fb13fb0a00e904d2c3fc5e8c1396ec36c0ddea8005b9b36db49

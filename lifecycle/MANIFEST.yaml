@@ -118,6 +118,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: 修路由——C1 回归检查（apk→apk-reverse、复刻→R46，均退出0）；C2 四提示词全进 R46（routing.json R46 加组合规则 + --primary R46 写进 sample-1 scope）；C3 Seep 触发条件记录在 lifecycle/V31-C3-SEEP-TRIGGER.md；C4 6 个 scope.md 第一行写模式+第一个工具；C5 REA 技能检查 0 混入；C10 tool-index.md 已生成
+  R2:
+    status: 完成
+    date: 2026-11-20
+    what: 接证据链——样本 1/2 各补 notes/handoff-manifest.json（检查器均 PASS：s1 11 文件、s2 15 文件）+ EVIDENCE-MAP.md + E 号单文件包装 md；样本 2 E 号拆分（E-003a/b、E-004a/b/c、E-006a/b）；样本 1 写 CODEX-RECEIPT（如实标注无真实 Codex CLI，未冒充真往返）
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

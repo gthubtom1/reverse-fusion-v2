@@ -1,20 +1,17 @@
-current_stage: R1
-current_domain: routing-fix
-status: R1 完成（待提交）
+current_stage: R2
+current_domain: evidence-chain
+status: R2 完成（待提交）
 done:
-  - "R0: v3-frozen 标签已推送（dafdd9e）；v3.1 文档已归档"
-  - "R1: 路由修好——C1 回归（apk/reconstruct 分流对）、C2 四提示词进 R46、C3 Seep 触发记录、C4 scope.md 工具声明、C5 REA 技能 0 混入、C10 tool-index 生成"
-next_step: "R2：接证据链——样本1/2 各补 handoff-manifest.json + EVIDENCE-MAP.md + E号拆分 + 真跑检查器 + 样本1 一次 Codex 往返回执"
+  - "样本1: handoff-manifest.json (checker PASS, 11 文件) + EVIDENCE-MAP.md + E 号 md 包装 + CODEX-RECEIPT.md"
+  - "样本2: E 号拆分 (E-003a/b, E-004a/b/c, E-006a/b) + 清单 (checker PASS, 15 文件) + EVIDENCE-MAP.md"
+next_step: "R3：样本 1 真调一次 REA 验证链（export_evidence_bundle / compare_functions / build_reconstruction_obligation_ledger / verify_reconstruction / evaluate_reconstruction_coverage）"
 blocked:
   - "无"
 open_items:
-  - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（v3 引用但未提交）——按 v3.1 正文/改动清单执行，缺口记为开放项"
-  - "check_state.py 未建（R7 才做）"
-  - "jshookmcp 未装（以后再说）"
-  - "APK d8 崩未成 dex（以后再说，R2/R3 再试一次已装工具链）"
-last_commit: "dafdd9e84f9951591aa93b2ae2867a0497a49629"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/dafdd9e84f9951591aa93b2ae2867a0497a49629"
+  - "Codex 往返：无真实 Codex CLI，用 CODEX-RECEIPT 记录电脑智能体交付 + 如实标注未走真 Codex"
+  - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
+last_commit: "b8ccdcdb6e9f4da5a58f4e5602edff2f6b2d3c70"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/b8ccdcdb6e9f4da5a58f4e5602edff2f6b2d3c70"
 evidence:
-  - "core/skills/config/routing.json（R46 组合规则）"
-  - "lifecycle/V31-C3-SEEP-TRIGGER.md"
-  - "core/skills/tool-index.md（已生成）"
+  - "cases/sample-1/evidence/checker-PASS-s1.txt"
+  - "cases/sample-2/evidence/checker-PASS-s2.txt"
