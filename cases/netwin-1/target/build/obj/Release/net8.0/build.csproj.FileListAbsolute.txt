@@ -1,0 +1,15 @@
+D:\Project\最终版聚合\cases\netwin-1\target\build\bin\Release\net8.0\build.exe
+D:\Project\最终版聚合\cases\netwin-1\target\build\bin\Release\net8.0\build.deps.json
+D:\Project\最终版聚合\cases\netwin-1\target\build\bin\Release\net8.0\build.runtimeconfig.json
+D:\Project\最终版聚合\cases\netwin-1\target\build\bin\Release\net8.0\build.dll
+D:\Project\最终版聚合\cases\netwin-1\target\build\bin\Release\net8.0\build.pdb
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.AssemblyInfoInputs.cache
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.AssemblyInfo.cs
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.csproj.CoreCompileInputs.cache
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.sourcelink.json
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.dll
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\refint\build.dll
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.pdb
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\build.genruntimeconfig.cache
+D:\Project\最终版聚合\cases\netwin-1\target\build\obj\Release\net8.0\ref\build.dll

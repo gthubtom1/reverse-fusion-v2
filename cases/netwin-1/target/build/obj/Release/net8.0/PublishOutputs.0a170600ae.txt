@@ -1,0 +1,5 @@
+D:\Project\最终版聚合\cases\netwin-1\target\build\out\build.exe
+D:\Project\最终版聚合\cases\netwin-1\target\build\out\build.dll
+D:\Project\最终版聚合\cases\netwin-1\target\build\out\build.deps.json
+D:\Project\最终版聚合\cases\netwin-1\target\build\out\build.runtimeconfig.json
+D:\Project\最终版聚合\cases\netwin-1\target\build\out\build.pdb

@@ -129,6 +129,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: 修数字和安装——3 个旧修正重补（D11）；MANIFEST modules_kept=675/upstream_count=675/do_not_use 删三项；Seep 不装清单；三份安装拷贝各 702 文件
+  R5:
+    status: 完成
+    date: 2026-11-20
+    what: 补领域——Stage 13 Windows+.NET（自建 .NET 校验，5 用例全对）；Stage 14 Go/Rust（自建 Go 校验，6 用例全对）；DOMAIN-VERDICTS.md 44 领域 verdict（恶意软件=范围外、固件/macOS/iOS=推迟理由、19+ 范围外一句理由）
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

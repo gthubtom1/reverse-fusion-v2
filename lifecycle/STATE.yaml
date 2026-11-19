@@ -1,18 +1,18 @@
-current_stage: R4
-current_domain: numbers-install
-status: R4 完成（待提交）
+current_stage: R5
+current_domain: domains
+status: R5 完成（待提交）
 done:
-  - "3 个旧修正重补（README_zh 192条/routing_zh 78工具/RELEASE-CHECKLIST 26项），DECISION-LOG D11 记录"
-  - "MANIFEST 数字改对：modules_kept=675、upstream_count=675、do_not_use 删掉 reverse-skill_unrelated_modules/ctf_sandbox_orchestrator/pentest_tools_src_hunter"
-  - "Seep 不装检查清单写进 MANIFEST not_installed_check"
-  - "三份安装拷贝刷新并各记文件数：.claude=702 / .agents=702 / .pi=702"
-next_step: "R5：补领域——新 Stage 13 Windows+.NET+厚客户端、14 Go/Rust、15 恶意软件门+领域、16 固件(可推迟)；macOS/iOS 写理由；19 个范围外写进领域表"
+  - "Stage 13（Windows+.NET+厚客户端）：自建 .NET 校验，5 用例双侧全对，比较器自检 ok"
+  - "Stage 14（Go/Rust）：自建 Go 校验，6 用例双侧全对"
+  - "DOMAIN-VERDICTS.md：44 领域 verdict；恶意软件=范围外不测、固件/macOS/iOS=推迟理由、19+ 范围外一句理由"
+next_step: "R6：共用比较器 + 复用检查——合并各案比较器脚本成 cases/_shared/comparator_check/；每旧案补一句复用检查"
 blocked:
   - "无"
 open_items:
+  - "恶意软件领域：本执行显式不测（安全门范围外），不拦"
+  - "Rust/macOS/iOS/固件：推迟（工具链/设备/样本缺）"
   - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-last_commit: "510afc4e82f1994ddbbe378761ac0504bcd3f11f"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/510afc4e82f1994ddbbe378761ac0504bcd3f11f"
+last_commit: "8baecac7bbf9b5486d0a54ac15183ae011b287b5"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/8baecac7bbf9b5486d0a54ac15183ae011b287b5"
 evidence:
-  - "lifecycle/MANIFEST.yaml（upstream_count=675、skill_install_counts）"
-  - "lifecycle/DECISION-LOG.md（D11）"
+  - "cases/netwin-1/ACCEPTANCE.md、cases/gorust-1/ACCEPTANCE.md、cases/final/DOMAIN-VERDICTS.md"
