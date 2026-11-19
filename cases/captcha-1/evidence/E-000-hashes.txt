@@ -1,0 +1,2 @@
+87edf713b7fa6ba6ba988d3d160208b2678dc6e4bb65e6546338408b7ef90769 *cases/captcha-1/target/index.html
+e517a6648c9e2f1af6352e3619105f4fec0a355c1515ab4530e8ab25f6d10d0d *cases/captcha-1/target/captcha.js

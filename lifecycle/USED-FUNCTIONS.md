@@ -38,6 +38,7 @@
 | reverse-skill `skills/protocol-reverse` | 抓包→还原→decode | 协议字段/状态机还原 | 是 | 是（Stage 8：tshark 抓 loopback pcap→导出 payload→Node decode 对照） |
 | （工具）tshark (Wireshark) | 抓包/导出 | loopback 抓包 | — | 是（4.6.8，NPF_Loopback；E-001 中 pcapng + payload 导出） |
 | reverse-skill `skills/browser-automation` | 打开→点击→录制 | 动态观察支撑 | 是 | 是（Stage 9：chrome-devtools 打开测试页、点击、录制请求链路） |
+| reverse-skill `field-journal/2026-07-05_dsl-vm-captcha-reverse.md` + `browser-automation/references/distilled-captcha-evidence.md` | 验证码方法 | 自有验证码定位/复现参考 | 是 | 是（Stage 10：借其常量表+函数追踪方法复现自建验证码 token） |
 | `skills/case-review` | 只读审查 | 核对证据链与哈希 | 是 | 本机未调用 |
 | `skills/docs-generator` | 报告模板 | 生成报告 | 是 | 是（用于 ACKNOWLEDGE 类标注的验收/交接单文档） |
 

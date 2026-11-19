@@ -1,0 +1,12 @@
+{
+  "stage": "captcha-1",
+  "date": "2026-11-20",
+  "mode": "algorithm extraction (mode 3)",
+  "pre_gate": "前置门通过：Stage 5-9 无『不通过』（JS通过/APK部分/扩展通过/协议通过/自动化通过）",
+  "upstream_method": "有现成方法：field-journal/2026-07-05_dsl-vm-captcha-reverse.md（DSL VM 逆向模式）+ browser-automation/references/distilled-captcha-evidence.md",
+  "sample": "自建学习验证码（Canvas 算术 + token）",
+  "all_match": true,
+  "original_outputs": {"8+5":["13","08d5dd28"],"3*7":["21","fa8d20df"],"10-4":["6","b54af524"],"7%3":["1","9e332aeb"],"0+0":["0","00000000"]},
+  "repro_outputs": "Node 复现逐字一致（ALL_MATCH true）",
+  "comparator": {"ok": true, "note": "改 40503->40504 后 4 组非零输入 token 全变；0+0 全零恒 00000000（语义）"}
+}
