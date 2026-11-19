@@ -1,3 +1,6 @@
+# reverse-fusion-v2（指针文件）
+本项目位置：`<SHARED_FOLDER>`（同步脚本从 `%USERPROFILE%/.fusion/fusion-home.yaml` 的 `shared_folder` 填入）。第一步读 `<SHARED_FOLDER>/FUSION-FINAL-v3.2.md` 与 `<SHARED_FOLDER>/lifecycle/STATE.yaml`；总控 `<SHARED_FOLDER>/core/skills/SKILL.md`；配置文件 `%USERPROFILE%/.fusion/fusion-home.yaml`。
+下面 5 条同步约定全文保留：
 # 本项目交接约定
 
 - 唯一同步目的地是 GitHub 公有仓库 `gthubtom1/reverse-fusion-v2` 的 `main`。

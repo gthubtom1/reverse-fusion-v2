@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "rea": {
+      "command": "<NODE_EXE>",
+      "args": ["<SHARED_FOLDER>/engine/rea/scripts/rea.mjs", "mcp"],
+      "cwd": "<SHARED_FOLDER>",
+      "env": { "HUSKY": "0", "GHIDRA_INSTALL_DIR": "<GHIDRA_DIR>", "JAVA_HOME": "<JAVA_HOME>" }
+    }
+  }
+}
