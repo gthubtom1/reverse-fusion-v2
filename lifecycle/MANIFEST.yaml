@@ -91,6 +91,10 @@ stage_status:
     status: 通过
     date: 2026-11-20
     what: 协议算法抽取——自建二进制协议（magic+字段+XOR 校验），tshark 抓 loopback pcap、导出 payload、Node decode 5 报文与真实响应全对、比较器自检通过
+  stage_9:
+    status: 通过
+    date: 2026-11-20
+    what: 浏览器自动化观察——chrome-devtools 打开 Stage 5 测试页、点击交互、录制请求链路（index.html/sig1.js/index2.html）全成功，观察支撑通过（不写 L4/L5）
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb

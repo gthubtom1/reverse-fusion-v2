@@ -1,22 +1,17 @@
-current_stage: 9
-current_domain: automation-1
+current_stage: 10
+current_domain: captcha-1
 status: 进行中
 done:
-  - "Stage 5A: reverse-skill 完整版恢复"
-  - "Stage 5: JS 算法抽取通过"
-  - "Stage 6: APK 算法抽取部分通过（d8 崩）"
-  - "Stage 7: 浏览器扩展算法抽取通过"
-  - "Stage 8: 协议算法抽取通过（tshark 抓包 + Node decode 5 报文全对）"
-next_step: "Stage 9：浏览器自动化观察——用前面 JS 测试页，跑一次自动化观察（打开、点、录请求链路），产出 observation.md"
+  - "Stage 5-9 全部完成：JS(通过) / APK(部分通过) / 扩展(通过) / 协议(通过) / 自动化观察(通过)"
+next_step: "Stage 10：验证码——先核查前置门（Stage 5-9 是否有不通过？有则写 NOT-STARTED 进 Stage 11）；再核查三个上游项目是否有现成验证码方法"
 blocked:
-  - "无"
+  - "无（前置门：Stage 6 是部分通过，不是不通过）"
 open_items:
-  - "jshookmcp 未装/未注册（以后再说）"
-  - "APK：d8 崩溃，需换工具再真机装"
-  - "第三方 APK/扩展下载网络不稳，样本用自建"
-  - "wrapper scapy/tshark 是系统工具，跨网段抓包/TLS 未覆盖"
-  - "core 675 vs v3 671、上游 676，数字差异原因未核实"
-last_commit: "d3e01dc8a8588bf58161cb885f8b37445b5dbd46"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/d3e01dc8a8588bf58161cb885f8b37445b5dbd46"
+  - "jshookmcp 未装（以后再说）"
+  - "验证码领域是否存在上游现成方法待核查"
+  - "第三方样本下载网络不稳，样本用自建"
+  - "APK d8 崩、需换 dex 工具（以后再说）"
+last_commit: "3c2d9463e09bbac78cfda705a56bea1256a29fa4"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/3c2d9463e09bbac78cfda705a56bea1256a29fa4"
 evidence:
-  - "cases/protocol-1/ACCEPTANCE.md（Stage 8 通过）"
+  - "cases/automation-1/ACCEPTANCE.md（Stage 9 通过）"
