@@ -1,0 +1,22 @@
+{
+  "assessment_scope": "machine_check_only",
+  "status": "FAIL",
+  "semantic_verification": "not_performed",
+  "target_execution": "not_performed",
+  "authorization": "not_assessed",
+  "issues": [
+    {
+      "code": "path.missing",
+      "location": "manifest",
+      "message": "Referenced file is missing"
+    }
+  ],
+  "checked_files": [],
+  "semantic_review_required": [],
+  "limitations": [
+    "SHA-256 checks fixity against supplied commitments, not authenticity or freshness of the selected version.",
+    "Source classifications and unknown lists require independent review; omitted or misclassified unknowns are not discovered.",
+    "No REA schema validation, Evidence authentication, proof applicability or semantic closure is performed.",
+    "PASS permits only mechanical handoff review; it does not authorize ACT or establish implementation readiness."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "input": "mr1337",
+      "original": "accepted",
+      "tampered": "denied",
+      "match": false
+    },
+    {
+      "input": "mr1338",
+      "original": "denied",
+      "tampered": "denied",
+      "match": true
+    },
+    {
+      "input": "MR1337",
+      "original": "denied",
+      "tampered": "denied",
+      "match": true
+    },
+    {
+      "input": "mr133",
+      "original": "denied",
+      "tampered": "denied",
+      "match": true
+    },
+    {
+      "input": "mr13377",
+      "original": "denied",
+      "tampered": "denied",
+      "match": true
+    }
+  ],
+  "detected_difference": true
+}

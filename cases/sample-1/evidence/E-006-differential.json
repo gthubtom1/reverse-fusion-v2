@@ -1,0 +1,82 @@
+{
+  "sample": "D:/tmp/fusion-samples/s1/CrackMe.exe",
+  "cases": [
+    {
+      "case": "TC1",
+      "input": "mr1337",
+      "original": {
+        "stdout": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[+] ACCESS GRANTED!\r\n[+] Password is correct!\r\n\r\nFLAG: CRACKME{X0R_CR4CK3D}\r\n\r\n[*] Press Enter to exit...",
+        "stderr": "",
+        "exit_code": 0,
+        "decision": "accepted"
+      },
+      "new": {
+        "decision": "accepted",
+        "expected_password": "mr1337"
+      },
+      "match": true
+    },
+    {
+      "case": "TC2",
+      "input": "mr1338",
+      "original": {
+        "stdout": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+        "stderr": "",
+        "exit_code": 0,
+        "decision": "denied"
+      },
+      "new": {
+        "decision": "denied",
+        "expected_password": "mr1337"
+      },
+      "match": true
+    },
+    {
+      "case": "TC3",
+      "input": "MR1337",
+      "original": {
+        "stdout": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+        "stderr": "",
+        "exit_code": 0,
+        "decision": "denied"
+      },
+      "new": {
+        "decision": "denied",
+        "expected_password": "mr1337"
+      },
+      "match": true
+    },
+    {
+      "case": "TC4",
+      "input": "mr133",
+      "original": {
+        "stdout": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+        "stderr": "",
+        "exit_code": 0,
+        "decision": "denied"
+      },
+      "new": {
+        "decision": "denied",
+        "expected_password": "mr1337"
+      },
+      "match": true
+    },
+    {
+      "case": "TC5",
+      "input": "mr13377",
+      "original": {
+        "stdout": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+        "stderr": "",
+        "exit_code": 0,
+        "decision": "denied"
+      },
+      "new": {
+        "decision": "denied",
+        "expected_password": "mr1337"
+      },
+      "match": true
+    }
+  ],
+  "all_match": true,
+  "original_runnable": true
+}

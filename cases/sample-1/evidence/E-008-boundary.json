@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case": "B1",
+      "input_repr": "''",
+      "original_decision": "denied",
+      "original_exit_code": 0,
+      "original_stdout_tail": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "denied",
+      "match": true
+    },
+    {
+      "case": "B2",
+      "input_repr": "'m'",
+      "original_decision": "denied",
+      "original_exit_code": 0,
+      "original_stdout_tail": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "denied",
+      "match": true
+    },
+    {
+      "case": "B3",
+      "input_repr": "'mr1337 '",
+      "original_decision": "accepted",
+      "original_exit_code": 0,
+      "original_stdout_tail": "\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[+] ACCESS GRANTED!\r\n[+] Password is correct!\r\n\r\nFLAG: CRACKME{X0R_CR4CK3D}\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "accepted",
+      "match": true
+    },
+    {
+      "case": "B4",
+      "input_repr": "'mr1337x'",
+      "original_decision": "denied",
+      "original_exit_code": 0,
+      "original_stdout_tail": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "denied",
+      "match": true
+    },
+    {
+      "case": "B5",
+      "input_repr": "'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'",
+      "original_decision": "denied",
+      "original_exit_code": 0,
+      "original_stdout_tail": "=================================\r\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[-] ACCESS DENIED!\r\n[-] Wrong password!\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "denied",
+      "match": true
+    },
+    {
+      "case": "B6",
+      "input_repr": "'mr1337\\r'",
+      "original_decision": "accepted",
+      "original_exit_code": 0,
+      "original_stdout_tail": "\n       SIMPLE+ XOR CRACKME       \r\n=================================\r\n\r\n[+] Enter password: \r\n[+] ACCESS GRANTED!\r\n[+] Password is correct!\r\n\r\nFLAG: CRACKME{X0R_CR4CK3D}\r\n\r\n[*] Press Enter to exit...",
+      "new_decision": "accepted",
+      "match": true
+    }
+  ],
+  "all_match": true
+}
