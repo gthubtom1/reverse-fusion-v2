@@ -1,19 +1,20 @@
-current_stage: R6
-current_domain: shared-comparator
-status: R6 完成（待提交）
+current_stage: R7
+current_domain: defenses
+status: R7 完成（待提交）
 done:
-  - "R6: 共享比较器 cases/_shared/comparator_check/compare.py + README；8 个旧案（sample-1/apk-1/js-1/ext-1/protocol-1/automation-1/captcha-1/netwin-1/gorust-1）各补一句 R6 复用检查"
-  - "第 6 条『先找工具再写脚本』已写进共享 README；compare_functions/export_evidence_bundle 等已在 R3 真调过"
-next_step: "R7：换电脑防线——versions.lock、engine 清单门、check_state.py、单写者规则、子模块硬门、唯一路由文件、授权模板、离线待推箱、样本本地备用、.ps1/.sh 孪生表、REA 技能检查、样本下载先过恶意软件门"
+  - "R6: 共享比较器 cases/_shared/comparator_check/compare.py + README；8 个旧案各补 R6 复用检查句"
+  - "R7: 12 条换电脑防线——versions.lock / ENGINE-GATE / check_state.py(OK) / ONEWRITER / submodule_gate(OK) / unique_router(OK) / AUTH-TEMPLATE / OFFLINE-QUEUE / SAMPLE-LOCAL / TWIN-TABLE / SAMPLE-GATE；REA 技能检查已在 R1/C5"
+next_step: "R8：回归+冻结——全领域重跑（共享比较器+R3验证链）、对照 v3.1 12 条完成标准、写 V3.1-REPORT+GAPS、README 能照跑任一领域、冻结"
 blocked:
   - "无"
 open_items:
   - "恶意软件领域：本执行显式不测（安全门范围外），不拦"
   - "Rust/macOS/iOS/固件：推迟（工具链/设备/样本缺）"
   - "FUSION-REVIEW-v3-AUDIT.md 不在仓库（开放项）"
-  - "8 案比较器曾各有一份（历史证据）已由 R6 收敛到共享；原文件保留，新案不再新写"
-last_commit: "475c9c89d2e587c2ace65a881cbf3112fb696ced"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/475c9c89d2e587c2ace65a881cbf3112fb696ced"
+  - "bootstrap-reverse.ps1/.sh 未逐对 diff（TWIN-TABLE 记开放项）"
+last_commit: "6756be7d37a9607a07e2dd57fbbf088efddb3d83"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/6756be7d37a9607a07e2dd57fbbf088efddb3d83"
 evidence:
-  - "cases/_shared/comparator_check/compare.py"
-  - "各案 ACCEPTANCE.md 的 R6 复用检查行"
+  - "lifecycle/check_state.py"
+  - "lifecycle/versions.lock"
+  - "lifecycle/defenses/（ENGINE-GATE/ONEWRITER/AUTH-TEMPLATE/OFFLINE-QUEUE/SAMPLE-LOCAL/TWIN-TABLE/SAMPLE-GATE/submodule_gate.py/unique_router.py）"

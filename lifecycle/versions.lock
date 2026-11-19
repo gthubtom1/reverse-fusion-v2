@@ -1,0 +1,18 @@
+# versions.lock — 锁定版本一剑清单（R7 防线 1）
+# 与 MANIFEST pinned 一致；换电脑时照此核对，不许用 latest/main。
+
+rea: 6.9.0
+rea_commit: 4491c84c82140a43fa12390b727840a433875ba8
+rea_node: 24.22.1
+rea_ghidra: 12.2
+rea_jdk: 25
+
+reverse-skill: 1.9.0
+reverse-skill_commit: ce675096e6a2cd4789a76f9bd618feddc2b6f333
+reverse-skill_files: 675
+
+seep: 1.15.0
+seep_commit: 1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e
+seep_note: Track B 才签出（本执行跳过）
+
+tools: {jadx: 1.5.6, apktool: 3.0.3, adb: 1.0.41, frida: 17.17.0, tshark: 4.6.8, go: (本地)]
