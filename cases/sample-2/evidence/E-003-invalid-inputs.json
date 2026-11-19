@@ -1,0 +1,55 @@
+{
+  "sample": "D:/tmp/fusion-samples/s2/howo-not-to-simple-keygen",
+  "cases": [
+    {
+      "case": "TI1",
+      "name": "",
+      "email": "",
+      "serial": "",
+      "exit_code": 1,
+      "decision": "denied",
+      "stdout_body": "\n\n\n\n\n\nHello! Welcome to Howo's not to simple Keygen CTF!\n\n\n\n\n\nWelcome back to the NTSK Hotel!\n\n\n\nPlease insert your full name: Please insert your best email: Please insert your serial: POLICE, THIS GUY IS A ROBBER BUT HE DON'T HAVE A VALID SERIAL KEY LOL!\n\nSAMPLE-RC=1\n\n",
+      "log": "D:\\tmp\\s2-TI1.log"
+    },
+    {
+      "case": "TI2",
+      "name": "alice",
+      "email": "",
+      "serial": "",
+      "exit_code": 1,
+      "decision": "denied",
+      "stdout_body": "\n\n\n\n\n\nHello! Welcome to Howo's not to simple Keygen CTF!\n\n\n\n\n\nWelcome back to the NTSK Hotel!\n\n\n\nPlease insert your full name: Please insert your best email: Please insert your serial: POLICE, THIS GUY IS A ROBBER BUT HE DON'T HAVE A VALID SERIAL KEY LOL!\n\nSAMPLE-RC=1\n\n",
+      "log": "D:\\tmp\\s2-TI2.log"
+    },
+    {
+      "case": "TI3",
+      "name": "alice",
+      "email": "bob@example.com",
+      "serial": "AAAA-AAAA-AAAA",
+      "exit_code": 1,
+      "decision": "denied",
+      "stdout_body": "\n\n\n\n\n\nHello! Welcome to Howo's not to simple Keygen CTF!\n\n\n\n\n\nWelcome back to the NTSK Hotel!\n\n\n\nPlease insert your full name: Please insert your best email: Please insert your serial: POLICE, THIS GUY IS A ROBBER BUT HE DON'T HAVE A VALID SERIAL KEY LOL!\n\nSAMPLE-RC=1\n\n",
+      "log": "D:\\tmp\\s2-TI3.log"
+    },
+    {
+      "case": "TI4",
+      "name": "alice",
+      "email": "bob@example.com",
+      "serial": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "exit_code": 1,
+      "decision": "denied",
+      "stdout_body": "\n\n\n\n\n\nHello! Welcome to Howo's not to simple Keygen CTF!\n\n\n\n\n\nWelcome back to the NTSK Hotel!\n\n\n\nPlease insert your full name: Please insert your best email: Please insert your serial: POLICE, THIS GUY IS A ROBBER BUT HE DON'T HAVE A VALID SERIAL KEY LOL!\n\nSAMPLE-RC=1\n\n",
+      "log": "D:\\tmp\\s2-TI4.log"
+    },
+    {
+      "case": "TI5",
+      "name": "alice",
+      "email": "bob@example.com",
+      "serial": "mr1337",
+      "exit_code": 1,
+      "decision": "denied",
+      "stdout_body": "\n\n\n\n\n\nHello! Welcome to Howo's not to simple Keygen CTF!\n\n\n\n\n\nWelcome back to the NTSK Hotel!\n\n\n\nPlease insert your full name: Please insert your best email: Please insert your serial: POLICE, THIS GUY IS A ROBBER BUT HE DON'T HAVE A VALID SERIAL KEY LOL!\n\nSAMPLE-RC=1\n\n",
+      "log": "D:\\tmp\\s2-TI5.log"
+    }
+  ]
+}
