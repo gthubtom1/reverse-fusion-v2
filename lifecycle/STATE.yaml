@@ -1,9 +1,10 @@
 current_stage: 12
 current_domain: final
-status: 进行中
+status: 完成（v3 定版；3 项缺口见 cases/final/GAPS.md；不宣称 100%）
 done:
-  - "Stage 5A-11 全部完成（含汇总与回归）"
-next_step: "Stage 12：收尾冻结——对照 v3 完成标准（v2.1 §9 十条 + 6 条新增）逐项打勾，写 cases/final/GAPS.md 与 V3-REPORT.md，MANIFEST fusion_version 定 v3"
+  - "Stage 5A-12 全部完成：5A(恢复)/5 JS通过/6 APK部分/7 扩展通过/8 协议通过/9 自动化通过/10 验证码通过/11 汇总回归/12 定版"
+  - "V3-REPORT 写就：基本完成，3 缺口（Seep 未做=Track B；APK 未成 dex；文件数口径）"
+next_step: "无（v3 阶段完毕）。后续走 Track B（样本3+Seep）/ 换 dex 工具补 APK / 换真实第三方样本重跑各领域"
 blocked:
   - "无"
 open_items:
@@ -11,7 +12,7 @@ open_items:
   - "APK d8 崩未成 dex（以后再说）"
   - "Stage 6 为部分通过（唯一非通过项）"
   - "第三方样本下载网络不稳，样本自建"
-last_commit: "3fb51ee42e2949aad4cde4c07aa5f224aee157a0"
-last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/3fb51ee42e2949aad4cde4c07aa5f224aee157a0"
+last_commit: "e9a54f613c49f56be05c6215b0e403b0b4b0b3bf"
+last_commit_link: "https://github.com/gthubtom1/reverse-fusion-v2/commit/e9a54f613c49f56be05c6215b0e403b0b4b0b3bf"
 evidence:
-  - "cases/aggregation/REGRESSION.md（Stage 11）"
+  - "cases/final/V3-REPORT.md、cases/final/GAPS.md（Stage 12）"

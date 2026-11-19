@@ -103,6 +103,10 @@ stage_status:
     status: 完成
     date: 2026-11-20
     what: 汇总——README 加『各领域怎么跑』入口表；各领域重跑 5 用例（JS/ext/captcha/apk 实跑，protocol/automation 引用证据）→ 无回归失败，cases/aggregation/REGRESSION.md 记录
+  stage_12:
+    status: 完成
+    date: 2026-11-20
+    what: 收官冻结——对照 §11.1 完成标准 16 项逐项核查；cases/final/GAPS.md（3 项缺口：Seep 抽取未做/G2 APK 未成 dex/G3 文件数口径）与 V3-REPORT.md（基本完成，不宣称 100%）；fusion_version 定为 v3
 
 known_limitations:
   - REA 的 Windows Ghidra P0 不支持 ELF，样本 2 改用 Ghidra 无头 + gdb
